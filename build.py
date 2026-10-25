@@ -127,7 +127,7 @@ for venue in venues + [travel_agents]:
     for image in venue['gallery']:
         caption = escape(image['alt'])
         src = escape(image['src'])
-        gallery.append(f'<button type="button" data-gallery-src="{src}" data-gallery-alt="{caption}" aria-label="Показать: {caption}" aria-pressed="false"><img src="{src}" width="{image["width"]}" height="{image["height"]}" alt="{caption}" loading="lazy"></button>')
+        gallery.append(f'<button type="button" data-gallery-src="{src}" data-gallery-alt="{caption}" aria-label="Показать: {caption}" aria-pressed="false"><img class="pb__gallery-thumbnail" src="{src}" width="{image["width"]}" height="{image["height"]}" alt="{caption}" loading="lazy"></button>')
     position = ' style="object-position:' + escape(venue['imagePosition']) + '"' if 'imagePosition' in venue else ''
     photo = f'<img id="pb-venue-photo" src="{escape(venue["mainImage"])}" width="{venue["mainWidth"]}" height="{venue["mainHeight"]}" alt="{escape(venue["mainAlt"])}" fetchpriority="high"{position}>'
     replacements = {
@@ -178,3 +178,88 @@ career_js = venue_js
 <html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Карьера — Певческая башня</title><meta name="description" content="Карьера в Певческой башне. Оставьте заявку: желаемая должность, опыт работы, ФИО и телефон."><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#065781"><link rel="icon" href="assets/logo.png"><link rel="preload" href="assets/fonts/bebas-neue-cyrillic.ttf" as="font" type="font/ttf" crossorigin><style>body{margin:0;background:#f7f2e9}</style></head><body>
 ''' + f'<style>{career_css}</style>\n' + ''.join(typography.parts) + f'\n<script>{career_js}</script>\n</body></html>\n')
 print('Готово: главная, ' + str(len(venues)) + ' страниц пространств, турагентам, карьера и tilda-t123.html')
+
+# Responsive assets are prepared once by src/prepare_images.py and checked in.
+# Production builds need only the Python standard library.
+image_manifest = json.loads((ROOT / 'src/image-manifest.json').read_text())
+
+
+def image_srcset(source):
+    return ', '.join(f'{v["src"]} {v["width"]}w' for v in image_manifest[source]['variants'])
+
+
+def image_sizes(attrs):
+    classes = attrs.get('class', '')
+    if 'pb__space-photo' in classes:
+        return '(max-width:639px) calc(100vw - 60px), (max-width:1199px) 46vw, 23vw'
+    if 'pb__contact-background' in classes or 'pb__careers-background' in classes:
+        return '(min-width:1568px) 1520px, 100vw'
+    if attrs.get('src', '').endswith('footer-tower.png'):
+        return '(max-width:639px) 80vw, 35vw'
+    if attrs.get('src', '').endswith('route-map.png'):
+        return '(min-width:1320px) 1280px, calc(100vw - 40px)'
+    if attrs.get('id') == 'pb-venue-photo' or attrs.get('fetchpriority') == 'high':
+        return '(max-width:639px) calc(100vw - 28px), 50vw'
+    if 'pb__map-image' in classes:
+        return '(max-width:899px) 100vw, 50vw'
+    if 'pb__gallery-thumbnail' in classes:
+        return '(max-width:639px) 30vw, 16vw'
+    return '(max-width:639px) 100vw, 50vw'
+
+
+class ImageTag(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        self.attrs = dict(attrs)
+
+
+def responsive_image(match):
+    parser = ImageTag()
+    parser.feed(match[0])
+    attrs = parser.attrs
+    source = attrs.get('src', '')
+    if source in image_manifest:
+        variants = image_manifest[source]['variants']
+        attrs['sizes'] = image_sizes(attrs)
+        attrs['srcset'] = image_srcset(source)
+        attrs['src'] = next((v['src'] for v in variants if v['width'] >= 960), variants[-1]['src'])
+    attrs['decoding'] = 'async'
+    if attrs.get('fetchpriority') == 'high':
+        attrs['loading'] = 'eager'
+    return '<img ' + ' '.join(key if value is None else f'{key}="{escape(value, quote=True)}"' for key, value in attrs.items()) + '>'
+
+
+def responsive_markup(markup):
+    markup = re.sub(r'<img\b[^>]*>', responsive_image, markup)
+    # Gallery controls keep full-size optimized sources separately from thumbnails.
+    def gallery_source(match):
+        source = match[1]
+        if source not in image_manifest:
+            return match[0]
+        return f'data-gallery-src="{image_manifest[source]["variants"][-1]["src"]}" data-gallery-srcset="{image_srcset(source)}"'
+    markup = re.sub(r'data-gallery-src="([^"]+)"', gallery_source, markup)
+    return markup
+
+
+loading_head = (ROOT / 'src/loading-head.html').read_text()
+loading_js = (ROOT / 'src/loading.js').read_text()
+preloader = '<div class="pb-preloader" aria-hidden="true"><img src="assets/logo.png" width="88" height="70" alt=""><span></span></div>'
+for document_path in (ROOT / 'dist').glob('*.html'):
+    if document_path.name.startswith('qa-'):
+        continue
+    document = responsive_markup(document_path.read_text())
+    document = document.replace('.ttf', '.woff2').replace('format("truetype")', 'format("woff2")').replace('type="font/ttf"', 'type="font/woff2"')
+    hero = re.search(r'<img\b[^>]*fetchpriority="high"[^>]*>', document)
+    preload = ''
+    if hero:
+        parser = ImageTag()
+        parser.feed(hero[0])
+        attrs = parser.attrs
+        preload = '<link rel="preload" as="image" fetchpriority="high" href="' + attrs['src'] + '"'
+        if 'srcset' in attrs:
+            preload += ' imagesrcset="' + attrs['srcset'] + '" imagesizes="' + attrs['sizes'] + '"'
+        preload += '>'
+    document = document.replace('</head>', preload + loading_head + '</head>')
+    document = document.replace('<body>', '<body>' + preloader, 1)
+    document = document.replace('</body>', '<script>' + loading_js + '</script></body>')
+    document_path.write_text(document)
+(ROOT / 'tilda-t123.html').write_text(responsive_markup(fragment).replace('.ttf', '.woff2').replace('format("truetype")', 'format("woff2")'))

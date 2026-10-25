@@ -54,6 +54,7 @@
   thumbnails.forEach(function (button) {
     button.addEventListener('click', function () {
       photo.src = button.dataset.gallerySrc;
+      photo.srcset = button.dataset.gallerySrcset || '';
       photo.alt = button.dataset.galleryAlt;
       thumbnails.forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
     });

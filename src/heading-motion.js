@@ -21,8 +21,8 @@
       });
     });
   }
-  // Keep the starting position stable before revealing the loaded typeface.
-  if (document.fonts) document.fonts.ready.then(start, start);
+  // A slow body font must not keep every heading invisible.
+  if (document.fonts) Promise.race([document.fonts.load('1em PBDisplay'), new Promise(function (resolve) { setTimeout(resolve, 450); })]).then(start, start);
   else start();
   reducedMotion.addEventListener('change', function (event) {
     if (!event.matches) return;

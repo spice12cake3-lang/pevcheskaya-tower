@@ -1,0 +1,1246 @@
+{
+  "assets/apartments.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 187887,
+    "variants": [
+      {
+        "src": "assets/optimized/apartments-11a2a9e65cc7-320.webp",
+        "width": 320,
+        "bytes": 14714
+      },
+      {
+        "src": "assets/optimized/apartments-11a2a9e65cc7-640.webp",
+        "width": 640,
+        "bytes": 54258
+      },
+      {
+        "src": "assets/optimized/apartments-11a2a9e65cc7-920.webp",
+        "width": 920,
+        "bytes": 109624
+      }
+    ]
+  },
+  "assets/china.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 209523,
+    "variants": [
+      {
+        "src": "assets/optimized/china-5bfa2914f94e-320.webp",
+        "width": 320,
+        "bytes": 16998
+      },
+      {
+        "src": "assets/optimized/china-5bfa2914f94e-640.webp",
+        "width": 640,
+        "bytes": 63340
+      },
+      {
+        "src": "assets/optimized/china-5bfa2914f94e-920.webp",
+        "width": 920,
+        "bytes": 124158
+      }
+    ]
+  },
+  "assets/contact-background.jpg": {
+    "width": 1280,
+    "height": 853,
+    "originalBytes": 142211,
+    "variants": [
+      {
+        "src": "assets/optimized/contact-background-c8147c1cda79-320.webp",
+        "width": 320,
+        "bytes": 15200
+      },
+      {
+        "src": "assets/optimized/contact-background-c8147c1cda79-640.webp",
+        "width": 640,
+        "bytes": 43804
+      },
+      {
+        "src": "assets/optimized/contact-background-c8147c1cda79-960.webp",
+        "width": 960,
+        "bytes": 85198
+      },
+      {
+        "src": "assets/optimized/contact-background-c8147c1cda79-1280.webp",
+        "width": 1280,
+        "bytes": 142170
+      }
+    ]
+  },
+  "assets/footer-tower.png": {
+    "width": 1353,
+    "height": 1691,
+    "originalBytes": 1518731,
+    "variants": [
+      {
+        "src": "assets/optimized/footer-tower-a99ec029433b-320.webp",
+        "width": 320,
+        "bytes": 51524
+      },
+      {
+        "src": "assets/optimized/footer-tower-a99ec029433b-640.webp",
+        "width": 640,
+        "bytes": 166260
+      },
+      {
+        "src": "assets/optimized/footer-tower-a99ec029433b-960.webp",
+        "width": 960,
+        "bytes": 353408
+      },
+      {
+        "src": "assets/optimized/footer-tower-a99ec029433b-1280.webp",
+        "width": 1280,
+        "bytes": 555962
+      },
+      {
+        "src": "assets/optimized/footer-tower-a99ec029433b-1353.webp",
+        "width": 1353,
+        "bytes": 587226
+      }
+    ]
+  },
+  "assets/hero-tower.png": {
+    "width": 1280,
+    "height": 955,
+    "originalBytes": 1505334,
+    "variants": [
+      {
+        "src": "assets/optimized/hero-tower-44092d3765a3-320.webp",
+        "width": 320,
+        "bytes": 16654
+      },
+      {
+        "src": "assets/optimized/hero-tower-44092d3765a3-640.webp",
+        "width": 640,
+        "bytes": 49610
+      },
+      {
+        "src": "assets/optimized/hero-tower-44092d3765a3-960.webp",
+        "width": 960,
+        "bytes": 87622
+      },
+      {
+        "src": "assets/optimized/hero-tower-44092d3765a3-1280.webp",
+        "width": 1280,
+        "bytes": 124126
+      }
+    ]
+  },
+  "assets/india.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 170792,
+    "variants": [
+      {
+        "src": "assets/optimized/india-1cf0656af974-320.webp",
+        "width": 320,
+        "bytes": 16256
+      },
+      {
+        "src": "assets/optimized/india-1cf0656af974-640.webp",
+        "width": 640,
+        "bytes": 54102
+      },
+      {
+        "src": "assets/optimized/india-1cf0656af974-920.webp",
+        "width": 920,
+        "bytes": 100078
+      }
+    ]
+  },
+  "assets/karaoke.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 205183,
+    "variants": [
+      {
+        "src": "assets/optimized/karaoke-0557200b25d4-320.webp",
+        "width": 320,
+        "bytes": 17878
+      },
+      {
+        "src": "assets/optimized/karaoke-0557200b25d4-640.webp",
+        "width": 640,
+        "bytes": 68500
+      },
+      {
+        "src": "assets/optimized/karaoke-0557200b25d4-920.webp",
+        "width": 920,
+        "bytes": 134652
+      }
+    ]
+  },
+  "assets/kids.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 158608,
+    "variants": [
+      {
+        "src": "assets/optimized/kids-aea831ae6ca2-320.webp",
+        "width": 320,
+        "bytes": 15086
+      },
+      {
+        "src": "assets/optimized/kids-aea831ae6ca2-640.webp",
+        "width": 640,
+        "bytes": 44054
+      },
+      {
+        "src": "assets/optimized/kids-aea831ae6ca2-920.webp",
+        "width": 920,
+        "bytes": 79346
+      }
+    ]
+  },
+  "assets/logo.png": {
+    "width": 550,
+    "height": 439,
+    "originalBytes": 30884,
+    "variants": [
+      {
+        "src": "assets/optimized/logo-8da8cbd54114-320.webp",
+        "width": 320,
+        "bytes": 11482
+      },
+      {
+        "src": "assets/optimized/logo-8da8cbd54114-550.webp",
+        "width": 550,
+        "bytes": 12958
+      }
+    ]
+  },
+  "assets/map.png": {
+    "width": 1176,
+    "height": 963,
+    "originalBytes": 1407287,
+    "variants": [
+      {
+        "src": "assets/optimized/map-fa53187c3ab1-320.webp",
+        "width": 320,
+        "bytes": 19840
+      },
+      {
+        "src": "assets/optimized/map-fa53187c3ab1-640.webp",
+        "width": 640,
+        "bytes": 68196
+      },
+      {
+        "src": "assets/optimized/map-fa53187c3ab1-960.webp",
+        "width": 960,
+        "bytes": 132674
+      },
+      {
+        "src": "assets/optimized/map-fa53187c3ab1-1176.webp",
+        "width": 1176,
+        "bytes": 186376
+      }
+    ]
+  },
+  "assets/odessa.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 125491,
+    "variants": [
+      {
+        "src": "assets/optimized/odessa-101405683dc1-320.webp",
+        "width": 320,
+        "bytes": 13086
+      },
+      {
+        "src": "assets/optimized/odessa-101405683dc1-640.webp",
+        "width": 640,
+        "bytes": 37286
+      },
+      {
+        "src": "assets/optimized/odessa-101405683dc1-920.webp",
+        "width": 920,
+        "bytes": 64902
+      }
+    ]
+  },
+  "assets/route-map.png": {
+    "width": 1799,
+    "height": 942,
+    "originalBytes": 985094,
+    "variants": [
+      {
+        "src": "assets/optimized/route-map-f25e1fc305dd-320.webp",
+        "width": 320,
+        "bytes": 9310
+      },
+      {
+        "src": "assets/optimized/route-map-f25e1fc305dd-640.webp",
+        "width": 640,
+        "bytes": 26034
+      },
+      {
+        "src": "assets/optimized/route-map-f25e1fc305dd-960.webp",
+        "width": 960,
+        "bytes": 43108
+      },
+      {
+        "src": "assets/optimized/route-map-f25e1fc305dd-1280.webp",
+        "width": 1280,
+        "bytes": 59264
+      },
+      {
+        "src": "assets/optimized/route-map-f25e1fc305dd-1799.webp",
+        "width": 1799,
+        "bytes": 87164
+      }
+    ]
+  },
+  "assets/shop.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 108637,
+    "variants": [
+      {
+        "src": "assets/optimized/shop-d933da03f291-320.webp",
+        "width": 320,
+        "bytes": 8656
+      },
+      {
+        "src": "assets/optimized/shop-d933da03f291-640.webp",
+        "width": 640,
+        "bytes": 30510
+      },
+      {
+        "src": "assets/optimized/shop-d933da03f291-920.webp",
+        "width": 920,
+        "bytes": 59108
+      }
+    ]
+  },
+  "assets/sochi.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 147130,
+    "variants": [
+      {
+        "src": "assets/optimized/sochi-a0d951adf750-320.webp",
+        "width": 320,
+        "bytes": 14652
+      },
+      {
+        "src": "assets/optimized/sochi-a0d951adf750-640.webp",
+        "width": 640,
+        "bytes": 42704
+      },
+      {
+        "src": "assets/optimized/sochi-a0d951adf750-920.webp",
+        "width": 920,
+        "bytes": 71742
+      }
+    ]
+  },
+  "assets/sochi/banquet.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 850516,
+    "variants": [
+      {
+        "src": "assets/optimized/banquet-9dcccbfdfb07-320.webp",
+        "width": 320,
+        "bytes": 16804
+      },
+      {
+        "src": "assets/optimized/banquet-9dcccbfdfb07-640.webp",
+        "width": 640,
+        "bytes": 47142
+      },
+      {
+        "src": "assets/optimized/banquet-9dcccbfdfb07-960.webp",
+        "width": 960,
+        "bytes": 80518
+      },
+      {
+        "src": "assets/optimized/banquet-9dcccbfdfb07-1280.webp",
+        "width": 1280,
+        "bytes": 119074
+      },
+      {
+        "src": "assets/optimized/banquet-9dcccbfdfb07-1920.webp",
+        "width": 1920,
+        "bytes": 228128
+      }
+    ]
+  },
+  "assets/sochi/hall.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 1053311,
+    "variants": [
+      {
+        "src": "assets/optimized/hall-94e9f214b379-320.webp",
+        "width": 320,
+        "bytes": 15926
+      },
+      {
+        "src": "assets/optimized/hall-94e9f214b379-640.webp",
+        "width": 640,
+        "bytes": 48120
+      },
+      {
+        "src": "assets/optimized/hall-94e9f214b379-960.webp",
+        "width": 960,
+        "bytes": 92094
+      },
+      {
+        "src": "assets/optimized/hall-94e9f214b379-1280.webp",
+        "width": 1280,
+        "bytes": 153534
+      },
+      {
+        "src": "assets/optimized/hall-94e9f214b379-1920.webp",
+        "width": 1920,
+        "bytes": 340896
+      }
+    ]
+  },
+  "assets/travel-agents/1.jpg": {
+    "width": 2560,
+    "height": 1920,
+    "originalBytes": 1470743,
+    "variants": [
+      {
+        "src": "assets/optimized/1-3eeadea7da93-320.webp",
+        "width": 320,
+        "bytes": 23446
+      },
+      {
+        "src": "assets/optimized/1-3eeadea7da93-640.webp",
+        "width": 640,
+        "bytes": 83640
+      },
+      {
+        "src": "assets/optimized/1-3eeadea7da93-960.webp",
+        "width": 960,
+        "bytes": 179940
+      },
+      {
+        "src": "assets/optimized/1-3eeadea7da93-1280.webp",
+        "width": 1280,
+        "bytes": 303096
+      },
+      {
+        "src": "assets/optimized/1-3eeadea7da93-1920.webp",
+        "width": 1920,
+        "bytes": 614838
+      }
+    ]
+  },
+  "assets/travel-agents/2.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 4372662,
+    "variants": [
+      {
+        "src": "assets/optimized/2-8d1b815934a9-320.webp",
+        "width": 320,
+        "bytes": 27632
+      },
+      {
+        "src": "assets/optimized/2-8d1b815934a9-640.webp",
+        "width": 640,
+        "bytes": 93320
+      },
+      {
+        "src": "assets/optimized/2-8d1b815934a9-960.webp",
+        "width": 960,
+        "bytes": 184864
+      },
+      {
+        "src": "assets/optimized/2-8d1b815934a9-1280.webp",
+        "width": 1280,
+        "bytes": 303298
+      },
+      {
+        "src": "assets/optimized/2-8d1b815934a9-1920.webp",
+        "width": 1920,
+        "bytes": 588406
+      }
+    ]
+  },
+  "assets/travel-agents/3.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 4374288,
+    "variants": [
+      {
+        "src": "assets/optimized/3-b611300ea658-320.webp",
+        "width": 320,
+        "bytes": 22334
+      },
+      {
+        "src": "assets/optimized/3-b611300ea658-640.webp",
+        "width": 640,
+        "bytes": 79798
+      },
+      {
+        "src": "assets/optimized/3-b611300ea658-960.webp",
+        "width": 960,
+        "bytes": 167086
+      },
+      {
+        "src": "assets/optimized/3-b611300ea658-1280.webp",
+        "width": 1280,
+        "bytes": 283170
+      },
+      {
+        "src": "assets/optimized/3-b611300ea658-1920.webp",
+        "width": 1920,
+        "bytes": 585722
+      }
+    ]
+  },
+  "assets/travel-agents/main.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 1370390,
+    "variants": [
+      {
+        "src": "assets/optimized/main-5733c0474c21-320.webp",
+        "width": 320,
+        "bytes": 12790
+      },
+      {
+        "src": "assets/optimized/main-5733c0474c21-640.webp",
+        "width": 640,
+        "bytes": 36352
+      },
+      {
+        "src": "assets/optimized/main-5733c0474c21-960.webp",
+        "width": 960,
+        "bytes": 66004
+      },
+      {
+        "src": "assets/optimized/main-5733c0474c21-1280.webp",
+        "width": 1280,
+        "bytes": 101594
+      },
+      {
+        "src": "assets/optimized/main-5733c0474c21-1920.webp",
+        "width": 1920,
+        "bytes": 183546
+      }
+    ]
+  },
+  "assets/venues/apartments/1.jpg": {
+    "width": 920,
+    "height": 462,
+    "originalBytes": 371573,
+    "variants": [
+      {
+        "src": "assets/optimized/1-37c4213a0a37-320.webp",
+        "width": 320,
+        "bytes": 9490
+      },
+      {
+        "src": "assets/optimized/1-37c4213a0a37-640.webp",
+        "width": 640,
+        "bytes": 27986
+      },
+      {
+        "src": "assets/optimized/1-37c4213a0a37-920.webp",
+        "width": 920,
+        "bytes": 47930
+      }
+    ]
+  },
+  "assets/venues/apartments/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 187159,
+    "variants": [
+      {
+        "src": "assets/optimized/2-13e88fb4472c-320.webp",
+        "width": 320,
+        "bytes": 9684
+      },
+      {
+        "src": "assets/optimized/2-13e88fb4472c-640.webp",
+        "width": 640,
+        "bytes": 28072
+      },
+      {
+        "src": "assets/optimized/2-13e88fb4472c-920.webp",
+        "width": 920,
+        "bytes": 51226
+      }
+    ]
+  },
+  "assets/venues/apartments/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 189245,
+    "variants": [
+      {
+        "src": "assets/optimized/3-b27338fd1501-320.webp",
+        "width": 320,
+        "bytes": 10868
+      },
+      {
+        "src": "assets/optimized/3-b27338fd1501-640.webp",
+        "width": 640,
+        "bytes": 34174
+      },
+      {
+        "src": "assets/optimized/3-b27338fd1501-920.webp",
+        "width": 920,
+        "bytes": 56454
+      }
+    ]
+  },
+  "assets/venues/china/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 312281,
+    "variants": [
+      {
+        "src": "assets/optimized/1-f9a8c2ec41b7-320.webp",
+        "width": 320,
+        "bytes": 16680
+      },
+      {
+        "src": "assets/optimized/1-f9a8c2ec41b7-640.webp",
+        "width": 640,
+        "bytes": 58476
+      },
+      {
+        "src": "assets/optimized/1-f9a8c2ec41b7-920.webp",
+        "width": 920,
+        "bytes": 109640
+      }
+    ]
+  },
+  "assets/venues/china/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 315840,
+    "variants": [
+      {
+        "src": "assets/optimized/2-92c72127ce95-320.webp",
+        "width": 320,
+        "bytes": 15438
+      },
+      {
+        "src": "assets/optimized/2-92c72127ce95-640.webp",
+        "width": 640,
+        "bytes": 43136
+      },
+      {
+        "src": "assets/optimized/2-92c72127ce95-920.webp",
+        "width": 920,
+        "bytes": 75174
+      }
+    ]
+  },
+  "assets/venues/china/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 251777,
+    "variants": [
+      {
+        "src": "assets/optimized/3-2add7bcee7a1-320.webp",
+        "width": 320,
+        "bytes": 13004
+      },
+      {
+        "src": "assets/optimized/3-2add7bcee7a1-640.webp",
+        "width": 640,
+        "bytes": 40118
+      },
+      {
+        "src": "assets/optimized/3-2add7bcee7a1-920.webp",
+        "width": 920,
+        "bytes": 70814
+      }
+    ]
+  },
+  "assets/venues/india/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 153519,
+    "variants": [
+      {
+        "src": "assets/optimized/1-9b1ca700de96-320.webp",
+        "width": 320,
+        "bytes": 14336
+      },
+      {
+        "src": "assets/optimized/1-9b1ca700de96-640.webp",
+        "width": 640,
+        "bytes": 42414
+      },
+      {
+        "src": "assets/optimized/1-9b1ca700de96-920.webp",
+        "width": 920,
+        "bytes": 73364
+      }
+    ]
+  },
+  "assets/venues/india/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 227416,
+    "variants": [
+      {
+        "src": "assets/optimized/2-836215bde55a-320.webp",
+        "width": 320,
+        "bytes": 20662
+      },
+      {
+        "src": "assets/optimized/2-836215bde55a-640.webp",
+        "width": 640,
+        "bytes": 71296
+      },
+      {
+        "src": "assets/optimized/2-836215bde55a-920.webp",
+        "width": 920,
+        "bytes": 127912
+      }
+    ]
+  },
+  "assets/venues/india/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 192595,
+    "variants": [
+      {
+        "src": "assets/optimized/3-af6a458f26a4-320.webp",
+        "width": 320,
+        "bytes": 14910
+      },
+      {
+        "src": "assets/optimized/3-af6a458f26a4-640.webp",
+        "width": 640,
+        "bytes": 56008
+      },
+      {
+        "src": "assets/optimized/3-af6a458f26a4-920.webp",
+        "width": 920,
+        "bytes": 108426
+      }
+    ]
+  },
+  "assets/venues/karaoke/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 193626,
+    "variants": [
+      {
+        "src": "assets/optimized/1-5e7036d6d5f6-320.webp",
+        "width": 320,
+        "bytes": 8364
+      },
+      {
+        "src": "assets/optimized/1-5e7036d6d5f6-640.webp",
+        "width": 640,
+        "bytes": 24716
+      },
+      {
+        "src": "assets/optimized/1-5e7036d6d5f6-920.webp",
+        "width": 920,
+        "bytes": 45250
+      }
+    ]
+  },
+  "assets/venues/karaoke/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 85113,
+    "variants": [
+      {
+        "src": "assets/optimized/2-b2b6cbaf24b1-320.webp",
+        "width": 320,
+        "bytes": 8190
+      },
+      {
+        "src": "assets/optimized/2-b2b6cbaf24b1-640.webp",
+        "width": 640,
+        "bytes": 22506
+      },
+      {
+        "src": "assets/optimized/2-b2b6cbaf24b1-920.webp",
+        "width": 920,
+        "bytes": 37882
+      }
+    ]
+  },
+  "assets/venues/karaoke/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 178644,
+    "variants": [
+      {
+        "src": "assets/optimized/3-3bf93c34a60c-320.webp",
+        "width": 320,
+        "bytes": 17796
+      },
+      {
+        "src": "assets/optimized/3-3bf93c34a60c-640.webp",
+        "width": 640,
+        "bytes": 67612
+      },
+      {
+        "src": "assets/optimized/3-3bf93c34a60c-920.webp",
+        "width": 920,
+        "bytes": 126376
+      }
+    ]
+  },
+  "assets/venues/kids/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 307020,
+    "variants": [
+      {
+        "src": "assets/optimized/1-7bb3a0164145-320.webp",
+        "width": 320,
+        "bytes": 18398
+      },
+      {
+        "src": "assets/optimized/1-7bb3a0164145-640.webp",
+        "width": 640,
+        "bytes": 58496
+      },
+      {
+        "src": "assets/optimized/1-7bb3a0164145-920.webp",
+        "width": 920,
+        "bytes": 104390
+      }
+    ]
+  },
+  "assets/venues/kids/2.jpg": {
+    "width": 789,
+    "height": 389,
+    "originalBytes": 89558,
+    "variants": [
+      {
+        "src": "assets/optimized/2-2ee35b9f7814-320.webp",
+        "width": 320,
+        "bytes": 14372
+      },
+      {
+        "src": "assets/optimized/2-2ee35b9f7814-640.webp",
+        "width": 640,
+        "bytes": 39400
+      },
+      {
+        "src": "assets/optimized/2-2ee35b9f7814-789.webp",
+        "width": 789,
+        "bytes": 53462
+      }
+    ]
+  },
+  "assets/venues/kids/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 261127,
+    "variants": [
+      {
+        "src": "assets/optimized/3-fecb217a6918-320.webp",
+        "width": 320,
+        "bytes": 14214
+      },
+      {
+        "src": "assets/optimized/3-fecb217a6918-640.webp",
+        "width": 640,
+        "bytes": 47884
+      },
+      {
+        "src": "assets/optimized/3-fecb217a6918-920.webp",
+        "width": 920,
+        "bytes": 86464
+      }
+    ]
+  },
+  "assets/venues/odessa/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 226475,
+    "variants": [
+      {
+        "src": "assets/optimized/1-7e80f782ef75-320.webp",
+        "width": 320,
+        "bytes": 11134
+      },
+      {
+        "src": "assets/optimized/1-7e80f782ef75-640.webp",
+        "width": 640,
+        "bytes": 35540
+      },
+      {
+        "src": "assets/optimized/1-7e80f782ef75-920.webp",
+        "width": 920,
+        "bytes": 66382
+      }
+    ]
+  },
+  "assets/venues/odessa/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 238968,
+    "variants": [
+      {
+        "src": "assets/optimized/2-e1134fbf964e-320.webp",
+        "width": 320,
+        "bytes": 13604
+      },
+      {
+        "src": "assets/optimized/2-e1134fbf964e-640.webp",
+        "width": 640,
+        "bytes": 41038
+      },
+      {
+        "src": "assets/optimized/2-e1134fbf964e-920.webp",
+        "width": 920,
+        "bytes": 71998
+      }
+    ]
+  },
+  "assets/venues/odessa/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 245171,
+    "variants": [
+      {
+        "src": "assets/optimized/3-b79e55616fbe-320.webp",
+        "width": 320,
+        "bytes": 12376
+      },
+      {
+        "src": "assets/optimized/3-b79e55616fbe-640.webp",
+        "width": 640,
+        "bytes": 39962
+      },
+      {
+        "src": "assets/optimized/3-b79e55616fbe-920.webp",
+        "width": 920,
+        "bytes": 81260
+      }
+    ]
+  },
+  "assets/venues/shop/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 428447,
+    "variants": [
+      {
+        "src": "assets/optimized/1-a6fe45d6d2fe-320.webp",
+        "width": 320,
+        "bytes": 13978
+      },
+      {
+        "src": "assets/optimized/1-a6fe45d6d2fe-640.webp",
+        "width": 640,
+        "bytes": 42392
+      },
+      {
+        "src": "assets/optimized/1-a6fe45d6d2fe-920.webp",
+        "width": 920,
+        "bytes": 76818
+      }
+    ]
+  },
+  "assets/venues/shop/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 417235,
+    "variants": [
+      {
+        "src": "assets/optimized/2-a0cec461becb-320.webp",
+        "width": 320,
+        "bytes": 12552
+      },
+      {
+        "src": "assets/optimized/2-a0cec461becb-640.webp",
+        "width": 640,
+        "bytes": 37308
+      },
+      {
+        "src": "assets/optimized/2-a0cec461becb-920.webp",
+        "width": 920,
+        "bytes": 69036
+      }
+    ]
+  },
+  "assets/venues/shop/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 241372,
+    "variants": [
+      {
+        "src": "assets/optimized/3-5aa169be2319-320.webp",
+        "width": 320,
+        "bytes": 5788
+      },
+      {
+        "src": "assets/optimized/3-5aa169be2319-640.webp",
+        "width": 640,
+        "bytes": 17560
+      },
+      {
+        "src": "assets/optimized/3-5aa169be2319-920.webp",
+        "width": 920,
+        "bytes": 30158
+      }
+    ]
+  },
+  "assets/venues/sochi/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 517458,
+    "variants": [
+      {
+        "src": "assets/optimized/1-22377d136a59-320.webp",
+        "width": 320,
+        "bytes": 15288
+      },
+      {
+        "src": "assets/optimized/1-22377d136a59-640.webp",
+        "width": 640,
+        "bytes": 47758
+      },
+      {
+        "src": "assets/optimized/1-22377d136a59-920.webp",
+        "width": 920,
+        "bytes": 76776
+      }
+    ]
+  },
+  "assets/venues/sochi/2.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 1053311,
+    "variants": [
+      {
+        "src": "assets/optimized/2-94e9f214b379-320.webp",
+        "width": 320,
+        "bytes": 15926
+      },
+      {
+        "src": "assets/optimized/2-94e9f214b379-640.webp",
+        "width": 640,
+        "bytes": 48120
+      },
+      {
+        "src": "assets/optimized/2-94e9f214b379-960.webp",
+        "width": 960,
+        "bytes": 92094
+      },
+      {
+        "src": "assets/optimized/2-94e9f214b379-1280.webp",
+        "width": 1280,
+        "bytes": 153534
+      },
+      {
+        "src": "assets/optimized/2-94e9f214b379-1920.webp",
+        "width": 1920,
+        "bytes": 340896
+      }
+    ]
+  },
+  "assets/venues/sochi/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 280405,
+    "variants": [
+      {
+        "src": "assets/optimized/3-1f5715221dde-320.webp",
+        "width": 320,
+        "bytes": 16206
+      },
+      {
+        "src": "assets/optimized/3-1f5715221dde-640.webp",
+        "width": 640,
+        "bytes": 54998
+      },
+      {
+        "src": "assets/optimized/3-1f5715221dde-920.webp",
+        "width": 920,
+        "bytes": 99262
+      }
+    ]
+  },
+  "assets/venues/viewpoint/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 204517,
+    "variants": [
+      {
+        "src": "assets/optimized/1-e7e47f98b22f-320.webp",
+        "width": 320,
+        "bytes": 16974
+      },
+      {
+        "src": "assets/optimized/1-e7e47f98b22f-640.webp",
+        "width": 640,
+        "bytes": 61440
+      },
+      {
+        "src": "assets/optimized/1-e7e47f98b22f-920.webp",
+        "width": 920,
+        "bytes": 120638
+      }
+    ]
+  },
+  "assets/venues/viewpoint/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 331107,
+    "variants": [
+      {
+        "src": "assets/optimized/2-3e10f88038a6-320.webp",
+        "width": 320,
+        "bytes": 14044
+      },
+      {
+        "src": "assets/optimized/2-3e10f88038a6-640.webp",
+        "width": 640,
+        "bytes": 52404
+      },
+      {
+        "src": "assets/optimized/2-3e10f88038a6-920.webp",
+        "width": 920,
+        "bytes": 110954
+      }
+    ]
+  },
+  "assets/venues/viewpoint/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 253989,
+    "variants": [
+      {
+        "src": "assets/optimized/3-dab82b7a3315-320.webp",
+        "width": 320,
+        "bytes": 13558
+      },
+      {
+        "src": "assets/optimized/3-dab82b7a3315-640.webp",
+        "width": 640,
+        "bytes": 46620
+      },
+      {
+        "src": "assets/optimized/3-dab82b7a3315-920.webp",
+        "width": 920,
+        "bytes": 86490
+      }
+    ]
+  },
+  "assets/venues/vodka/1.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 138491,
+    "variants": [
+      {
+        "src": "assets/optimized/1-1fc3147c2d9e-320.webp",
+        "width": 320,
+        "bytes": 11902
+      },
+      {
+        "src": "assets/optimized/1-1fc3147c2d9e-640.webp",
+        "width": 640,
+        "bytes": 42792
+      },
+      {
+        "src": "assets/optimized/1-1fc3147c2d9e-920.webp",
+        "width": 920,
+        "bytes": 81268
+      }
+    ]
+  },
+  "assets/venues/vodka/2.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 170951,
+    "variants": [
+      {
+        "src": "assets/optimized/2-8f9ee7056a4a-320.webp",
+        "width": 320,
+        "bytes": 18948
+      },
+      {
+        "src": "assets/optimized/2-8f9ee7056a4a-640.webp",
+        "width": 640,
+        "bytes": 63180
+      },
+      {
+        "src": "assets/optimized/2-8f9ee7056a4a-920.webp",
+        "width": 920,
+        "bytes": 114320
+      }
+    ]
+  },
+  "assets/venues/vodka/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 146151,
+    "variants": [
+      {
+        "src": "assets/optimized/3-ce157a4adc93-320.webp",
+        "width": 320,
+        "bytes": 12326
+      },
+      {
+        "src": "assets/optimized/3-ce157a4adc93-640.webp",
+        "width": 640,
+        "bytes": 45796
+      },
+      {
+        "src": "assets/optimized/3-ce157a4adc93-920.webp",
+        "width": 920,
+        "bytes": 86230
+      }
+    ]
+  },
+  "assets/viewpoint.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 156068,
+    "variants": [
+      {
+        "src": "assets/optimized/viewpoint-530f42fd96be-320.webp",
+        "width": 320,
+        "bytes": 11796
+      },
+      {
+        "src": "assets/optimized/viewpoint-530f42fd96be-640.webp",
+        "width": 640,
+        "bytes": 37934
+      },
+      {
+        "src": "assets/optimized/viewpoint-530f42fd96be-920.webp",
+        "width": 920,
+        "bytes": 78736
+      }
+    ]
+  },
+  "assets/vodka.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 141502,
+    "variants": [
+      {
+        "src": "assets/optimized/vodka-cad126ef45d0-320.webp",
+        "width": 320,
+        "bytes": 14424
+      },
+      {
+        "src": "assets/optimized/vodka-cad126ef45d0-640.webp",
+        "width": 640,
+        "bytes": 49206
+      },
+      {
+        "src": "assets/optimized/vodka-cad126ef45d0-920.webp",
+        "width": 920,
+        "bytes": 88952
+      }
+    ]
+  }
+}
