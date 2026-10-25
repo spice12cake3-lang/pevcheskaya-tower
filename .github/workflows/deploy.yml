@@ -1,0 +1,70 @@
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Import initial website files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          from tempfile import TemporaryDirectory
+          from zipfile import ZipFile
+          parts = sorted(Path('.').glob('site-upload-*.part'))
+          if parts:
+              with TemporaryDirectory() as temp:
+                  archive = Path(temp) / 'snapshot.zip'
+                  with archive.open('wb') as output:
+                      for part in parts:
+                          output.write(part.read_bytes())
+                  with ZipFile(archive) as bundle:
+                      for entry in bundle.namelist():
+                          path = PurePosixPath(entry)
+                          if path.is_absolute() or '..' in path.parts:
+                              raise ValueError('Invalid archive path')
+                      bundle.extractall('.')
+          PY
+          if compgen -G 'site-upload-*.part' > /dev/null; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git rm -f -- site-upload-*.part
+            git add .gitignore README.md build.py tilda-t123.html src dist
+            git commit -m 'Import website source and assets'
+            git push
+          fi
+      - name: Build static website
+        run: python3 build.py
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
