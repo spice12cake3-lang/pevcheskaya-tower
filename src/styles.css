@@ -219,13 +219,15 @@ html{scroll-behavior:smooth}
  .pb .pb__event-copy{min-height:0;padding:24px}
  .pb .pb__event-copy h2{font-size:32px}
  .pb .pb__contact{grid-template-columns:minmax(0,1fr);gap:32px;min-height:0;padding:32px}
+ .pb .pb__contact h2{font-size:32px;line-height:1.15}
  .pb .pb__form{max-width:480px;justify-self:center}
  .pb .pb__contacts{grid-template-columns:minmax(0,1fr);gap:16px}
  .pb .pb__map{min-height:360px}
 }
-@media(max-width:639px){
- .pb{padding-bottom:16px;--pb-gutter:14px;--pb-panel-padding:20px;--pb-opening-inset:10px;--pb-opening-gap:10px;--pb-intro-inset:10px}
- .pb h2{font-size:30px}
+@media(max-width:639.98px){
+ .pb{padding-bottom:16px;--pb-gutter:14px;--pb-panel-padding:20px;--pb-opening-inset:10px;--pb-opening-gap:10px;--pb-intro-inset:10px;--pb-mobile-h1:36px;--pb-mobile-h2:30px;--pb-mobile-h3:24px}
+ .pb h2,.pb .pb__booking h2{font-size:var(--pb-mobile-h2);line-height:1.15}
+ .pb .pb__card-title,.pb .pb__alternate h3{font-size:var(--pb-mobile-h3);line-height:1.2}
  .pb .pb__menu-toggle{height:44px;min-height:44px;padding:10px 14px;gap:8px;font-size:14px}
  .pb .pb__menu-toggle svg{width:18px;height:18px}
  .pb .pb__hero{height:auto;grid-template-columns:minmax(0,1fr);padding:var(--pb-opening-inset);gap:var(--pb-opening-gap)}
@@ -236,7 +238,7 @@ html{scroll-behavior:smooth}
  .pb .pb__navigation-panel{padding:24px}
  .pb .pb__navigation-header>img{width:88px;height:70px}
  .pb .pb__brand img{width:75px;height:60px}
- .pb .pb__intro h1,.pb .pb__careers-intro h1{font-size:36px;letter-spacing:-.3px;margin-bottom:16px}
+ .pb .pb__intro h1,.pb .pb__careers-intro h1{font-size:var(--pb-mobile-h1);letter-spacing:-.3px;margin-bottom:16px}
  .pb .pb__intro p{font-size:14px;line-height:1.45}
  .pb .pb__hero-photo{aspect-ratio:auto;min-height:340px}
  .pb .pb__hero-photo>img{position:absolute;inset:0;height:100%}
@@ -245,7 +247,7 @@ html{scroll-behavior:smooth}
  .pb .pb__hero-info-card>svg{width:22px;height:22px;top:10px;right:10px}
  .pb .pb__route{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:20px;border-radius:16px}
  .pb .pb__route-header{gap:16px}
- .pb .pb__route-header h2{font-size:28px}
+ .pb .pb__route-header h2{font-size:var(--pb-mobile-h2)}
  .pb .pb__route-header p{font-size:14px}
  .pb .pb__booking{margin-top:14px;padding:24px var(--pb-panel-padding)}
  .pb .pb__booking-fields{gap:10px}
@@ -259,37 +261,37 @@ html{scroll-behavior:smooth}
  .pb .pb__tab{min-height:52px;font-size:20px;padding:13px 20px}
  .pb .pb__events{gap:12px}
  .pb .pb__event-copy{min-height:0;padding:24px 20px}
- .pb .pb__event-copy h2{font-size:30px}
+ .pb .pb__event-copy h2{font-size:var(--pb-mobile-h2)}
  .pb .pb__event-photo{aspect-ratio:4/3}
  .pb .pb__event-copy>p{margin:18px 0 28px}
- .pb .pb__event-offer h3{font-size:24px}
+ .pb .pb__event-offer h3{font-size:var(--pb-mobile-h3)}
  .pb .pb__event-copy>.pb__button{margin-top:28px}
  .pb .pb__contact{padding:20px;gap:28px}
- .pb .pb__contact h2{font-size:40px}
+ .pb .pb__contact h2{font-size:var(--pb-mobile-h2);line-height:1.15}
  .pb .pb__contact-copy>p{font-size:14px;margin-top:18px}
  .pb .pb__contact-direct{margin-top:28px}
  .pb .pb__contact-direct>a{font-size:16px;padding:14px 22px;min-height:52px}
  .pb .pb__form{padding:20px;gap:20px;border-radius:16px}
- .pb .pb__form h3{font-size:26px}
+ .pb .pb__form h3{font-size:var(--pb-mobile-h3);line-height:1.2}
  .pb .pb__form-fields{grid-template-columns:minmax(0,1fr)}
  .pb .pb__contact-details{display:block}
  .pb .pb__footer-art{width:min(100%,320px);height:auto;aspect-ratio:1353/1691;margin:24px auto}
  .pb .pb__map{min-height:320px}
 }
 @media(max-width:479px){
+ .pb{--pb-mobile-h1:34px}
  .pb .pb__space-grid{grid-template-columns:minmax(0,1fr);gap:12px}
  .pb .pb__space-card{min-height:0;padding:var(--pb-panel-padding)}
- .pb .pb__intro h1,.pb .pb__careers-intro h1{font-size:34px}
 }
 @media(max-width:359px){
+ .pb{--pb-mobile-h1:32px;--pb-mobile-h2:28px}
  .pb .pb__intro-header{flex-wrap:wrap;gap:12px}
  .pb .pb__intro{gap:72px;min-height:0}
- .pb .pb__intro h1,.pb .pb__careers-intro h1{font-size:28px;overflow-wrap:anywhere}
+ .pb .pb__intro h1,.pb .pb__careers-intro h1{overflow-wrap:anywhere}
  .pb .pb__intro p{overflow-wrap:anywhere}
  .pb .pb__booking-fields{grid-template-columns:minmax(0,1fr)}
  .pb .pb__contact{padding:14px}
  .pb .pb__form{padding:16px}
- .pb .pb__contact h2{font-size:36px}
  .pb .pb__contact-phone{font-size:18px}
  .pb .pb__detail p,.pb .pb__email{overflow-wrap:anywhere}
 }
@@ -316,7 +318,7 @@ html{scroll-behavior:smooth}
 .pb .pb__pdf-page{width:max-content;min-width:100%;padding:24px;display:flex;justify-content:center}
 .pb .pb__pdf-canvas{display:block;max-width:none;background:white;box-shadow:0 3px 22px #17303c1a;flex-shrink:0}
 .pb .pb__pdf-status{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:24px;text-align:center;font-size:15px;color:var(--pb-blue);background:#e9e4dc;z-index:1}
-@media(max-width:639px){
+@media(max-width:639.98px){
  .pb .pb__pdf-header{gap:12px;padding:12px}
  .pb .pb__pdf-header h2{font-size:28px}
  .pb .pb__pdf-controls{order:3;width:100%;gap:5px}
@@ -342,7 +344,7 @@ html{scroll-behavior:smooth}
 .pb .pb__schedule-age{display:inline-block;margin-left:6px;color:var(--pb-ink);font:400 13px/1 var(--t-text-font);vertical-align:middle}
 .pb .pb__agenda-note{margin-top:20px;font-size:14px;color:#6b6b6b}
 @media(min-width:1200px){.pb .pb__schedule{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:639px){
+@media(max-width:639.98px){
  .pb .pb__agenda{scroll-margin-top:112px}
  .pb .pb__agenda-info{padding:16px;font-size:14px;gap:6px}
  .pb .pb__schedule-row{grid-template-columns:48px minmax(0,1fr);gap:8px 16px;min-height:120px;padding:20px 0}
@@ -370,7 +372,7 @@ html{scroll-behavior:smooth}
 .pb .pb__pdf--lightbox [data-pdf-prev]{left:max(16px,calc((100% - var(--pb-pdf-sheet-width,800px))/2 - 64px))}
 .pb .pb__pdf--lightbox [data-pdf-next]{right:max(16px,calc((100% - var(--pb-pdf-sheet-width,800px))/2 - 64px))}
 .pb .pb__pdf--lightbox .pb__pdf-page-number{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:14px;color:var(--pb-white)}
-@media(max-width:639px){
+@media(max-width:639.98px){
  .pb .pb__pdf--lightbox{padding:64px 12px 74px}
  .pb .pb__pdf--lightbox .pb__pdf-close{right:14px;top:14px}
  .pb .pb__pdf--lightbox .pb__pdf-page{padding:4px}
@@ -402,9 +404,9 @@ html{scroll-behavior:smooth}
 .pb .pb__banquet-close{position:fixed;top:16px;right:16px;display:grid;place-items:center;width:44px;height:44px;padding:11px;border-radius:10px;background:var(--pb-white);color:var(--pb-blue)}
 .pb .pb__banquet-close:hover{background:#eee4d2}
 .pb .pb__banquet-close svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
-@media(max-width:639px){
+@media(max-width:639.98px){
  .pb .pb__banquet{width:calc(100% - 24px);max-height:calc(100dvh - 96px);padding:24px 20px;border-radius:16px}
- .pb .pb__banquet h2{font-size:34px}
+ .pb .pb__banquet h2{font-size:var(--pb-mobile-h2)}
  .pb .pb__banquet-description{font-size:14px;margin:12px 0 24px}
  .pb .pb__banquet-close{top:12px;right:12px}
 }

@@ -24,11 +24,11 @@
  .pb .pb__restaurant-gallery{gap:10px}
  .pb .pb__restaurant-photo{min-height:600px}
 }
-@media(max-width:639px){
+@media(max-width:639.98px){
  .pb .pb__restaurant{grid-template-columns:minmax(0,1fr);gap:20px;min-height:0}
  .pb .pb__restaurant-intro{padding:var(--pb-intro-inset) 0 0}
  .pb .pb__restaurant-heading{margin-top:40px}
- .pb .pb__restaurant-heading h1{font-size:48px}
+ .pb .pb__restaurant-heading h1{font-size:var(--pb-mobile-h1);line-height:1.05}
  .pb .pb__restaurant-location{font-size:14px;margin-top:10px}
  .pb .pb__restaurant-copy{padding-top:60px;margin-bottom:28px}
  .pb .pb__restaurant-copy>p{font-size:14px}
