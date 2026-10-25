@@ -619,14 +619,17 @@ html{scroll-behavior:smooth}
   });
   var floatingHeader = root.querySelector('.pb__header');
   var firstSection = root.querySelector('.pb__restaurant, .pb__careers');
+  var initialMenu = root.querySelector('.pb__intro-header [data-nav-open]');
   function updateFloatingHeader() {
     var visibleFromStart = root.classList.contains('pb--careers') && window.matchMedia('(min-width:1200px)').matches;
-    floatingHeader.hidden = !visibleFromStart && firstSection.getBoundingClientRect().bottom > 0;
+    var trigger = window.matchMedia('(max-width:639.98px)').matches && initialMenu ? initialMenu : firstSection;
+    floatingHeader.hidden = !visibleFromStart && trigger.getBoundingClientRect().bottom > 0;
   }
   window.addEventListener('scroll', updateFloatingHeader, {passive: true});
   window.addEventListener('resize', updateFloatingHeader);
   var headerObserver = new IntersectionObserver(updateFloatingHeader);
   headerObserver.observe(firstSection);
+  if (initialMenu) headerObserver.observe(initialMenu);
   updateFloatingHeader();
   var photo = root.querySelector('#pb-venue-photo');
   var thumbnails = root.querySelectorAll('[data-gallery-src]');

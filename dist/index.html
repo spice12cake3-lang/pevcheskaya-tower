@@ -744,13 +744,16 @@ html{scroll-behavior:smooth}
   });
   var floatingHeader = root.querySelector('.pb__header');
   var hero = root.querySelector('.pb__hero');
+  var initialMenu = root.querySelector('.pb__intro-header [data-nav-open]');
   function updateFloatingHeader() {
-    floatingHeader.hidden = hero.getBoundingClientRect().bottom > 0;
+    var trigger = window.matchMedia('(max-width:639.98px)').matches && initialMenu ? initialMenu : hero;
+    floatingHeader.hidden = trigger.getBoundingClientRect().bottom > 0;
   }
   window.addEventListener('scroll', updateFloatingHeader, {passive: true});
   window.addEventListener('resize', updateFloatingHeader);
   var headerObserver = new IntersectionObserver(updateFloatingHeader);
   headerObserver.observe(hero);
+  if (initialMenu) headerObserver.observe(initialMenu);
   updateFloatingHeader();
 
   var routeDialog = root.querySelector('#pb-route');
