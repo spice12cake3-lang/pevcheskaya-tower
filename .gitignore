@@ -1,0 +1,10 @@
+.DS_Store
+.openai/
+__pycache__/
+*.py[cod]
+*.zip
+preview-*.png
+qa-*/
+dist/qa-*
+reference/
+design-qa.md

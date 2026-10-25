@@ -1,0 +1,31 @@
+<main class="pb pb--careers" id="pb-site">
+  <!-- SHARED_HEADER -->
+  <header class="pb__intro-header pb__careers-header">
+    <a class="pb__brand" href="./" aria-label="Певческая башня — главная"><img src="assets/logo.png" width="88" height="70" alt="Певческая башня"></a>
+    <button class="pb__menu-toggle" type="button" data-nav-open aria-haspopup="dialog" aria-controls="pb-navigation" aria-expanded="false">Меню <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </header>
+  <section class="pb__careers pb__content" aria-labelledby="pb-careers-title">
+    <img class="pb__careers-background" src="assets/sochi/hall.jpg" width="2560" height="1707" alt="" fetchpriority="high">
+    <div class="pb__careers-intro">
+      <h1 id="pb-careers-title">Карьера</h1>
+      <p>Мы всегда рады людям, которые любят своё дело и хотят развиваться вместе с нами. Оставьте заявку — мы свяжемся с вами и расскажем о работе в Певческой башне.</p>
+    </div>
+    <form class="pb__form pb__career-form t-form-off" id="pb-career-form" aria-labelledby="pb-career-form-title" data-feedback-form>
+      <h2 id="pb-career-form-title">Оставьте заявку, и мы с вами свяжемся</h2>
+      <div class="pb__form-fields pb__career-fields">
+        <label class="pb__form-field" for="pb-career-position"><span class="pb__sr-only">Желаемая должность</span><input id="pb-career-position" name="position" placeholder="Желаемая должность" required maxlength="120"></label>
+        <label class="pb__form-field" for="pb-career-experience"><span class="pb__sr-only">Опыт работы</span><input id="pb-career-experience" name="experience" placeholder="Опыт работы" maxlength="200"></label>
+        <label class="pb__form-field pb__career-field-full" for="pb-career-name"><span class="pb__sr-only">ФИО</span><input id="pb-career-name" name="name" placeholder="ФИО" autocomplete="name" required maxlength="160"></label>
+        <label class="pb__form-field pb__career-field-full" for="pb-career-phone"><span class="pb__sr-only">Телефон</span><input id="pb-career-phone" name="phone" type="tel" placeholder="+7 (000) 000-00-00" autocomplete="tel" required maxlength="40"></label>
+      </div>
+      <label class="pb__consent" for="pb-career-consent"><input id="pb-career-consent" name="consent" type="checkbox" required><span>Соглашаюсь с <button class="pb__policy-link" type="button">политикой конфиденциальности</button> и даю <button class="pb__policy-link" type="button">согласие на обработку персональных данных.</button></span></label>
+      <button class="pb__button" type="submit">Оставить заявку</button>
+      <p class="pb__form-message" role="status" data-form-message hidden>Это макет формы. Заявка не отправлена.</p>
+    </form>
+  </section>
+  <!-- SHARED_CONTACTS -->
+  <!-- SHARED_ROUTE -->
+  <!-- SHARED_MENUS -->
+  <!-- SHARED_BANQUET -->
+  <div class="pb__toast" id="pb-toast" role="status" hidden></div>
+</main>

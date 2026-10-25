@@ -1,0 +1,47 @@
+/* Sochi: two equal panels with a colour photograph and monochrome gallery. */
+.pb.pb--restaurant{padding:var(--pb-opening-inset) var(--pb-opening-inset) 16px;min-height:100dvh}
+.pb .pb__restaurant{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--pb-opening-gap);min-height:calc(100dvh - 2 * var(--pb-opening-inset))}
+.pb .pb__restaurant-intro{display:flex;flex-direction:column;min-width:0;padding:var(--pb-intro-inset) var(--pb-intro-inset) 12px}
+.pb .pb__restaurant-heading{margin-top:52px}
+.pb .pb__restaurant-heading h1{font-size:72px;line-height:1}
+.pb .pb__restaurant-location{margin-top:14px;font-size:16px;line-height:1.4}
+.pb .pb__restaurant-location span{font-size:12px;margin-right:4px}
+.pb .pb__restaurant-location a:hover{text-decoration:underline;text-underline-offset:4px}
+.pb .pb__restaurant-copy{margin-top:auto;margin-bottom:64px;padding-top:64px}
+.pb .pb__restaurant-copy>p{max-width:54ch;font:400 16px/1.45 var(--t-text-font)}
+.pb .pb__restaurant-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.pb .pb__restaurant-actions .pb__button--light{width:140px}
+.pb .pb__restaurant-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pb .pb__restaurant-gallery button{min-width:0;aspect-ratio:1.4;padding:0;overflow:hidden;border-radius:12px;background:var(--pb-white)}
+.pb .pb__restaurant-gallery img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .35s ease,transform .35s ease}
+.pb .pb__restaurant-gallery button:focus-visible img{filter:grayscale(0);transform:scale(1.03)}
+.pb .pb__restaurant-photo{position:relative;overflow:hidden;min-width:0;min-height:620px;border-radius:24px}
+.pb .pb__restaurant-photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% center}
+@media(hover:hover) and (pointer:fine){.pb .pb__restaurant-gallery button:hover img{filter:grayscale(0);transform:scale(1.03)}}
+@media(max-width:899px){
+ .pb .pb__restaurant-heading h1{font-size:60px}
+ .pb .pb__restaurant-copy{padding-top:52px;margin-bottom:36px}
+ .pb .pb__restaurant-gallery{gap:10px}
+ .pb .pb__restaurant-photo{min-height:600px}
+}
+@media(max-width:639px){
+ .pb .pb__restaurant{grid-template-columns:minmax(0,1fr);gap:20px;min-height:0}
+ .pb .pb__restaurant-intro{padding:var(--pb-intro-inset) 0 0}
+ .pb .pb__restaurant-heading{margin-top:40px}
+ .pb .pb__restaurant-heading h1{font-size:48px}
+ .pb .pb__restaurant-location{font-size:14px;margin-top:10px}
+ .pb .pb__restaurant-copy{padding-top:60px;margin-bottom:28px}
+ .pb .pb__restaurant-copy>p{font-size:14px}
+ .pb .pb__restaurant-actions{gap:10px;margin-top:24px;flex-wrap:nowrap}
+ .pb .pb__restaurant-actions .pb__button{width:auto;flex:1;min-width:0;padding:5px 12px}
+ .pb .pb__restaurant-photo{min-height:0;aspect-ratio:4/3;border-radius:16px}
+ .pb .pb__restaurant-gallery button{border-radius:8px}
+}
+
+.pb.pb--restaurant>.pb__contacts{width:calc(100% + 2 * var(--pb-opening-inset));margin-left:calc(-1 * var(--pb-opening-inset));margin-right:calc(-1 * var(--pb-opening-inset))}
+.pb.pb--restaurant>.pb__contact{width:calc(100% - 2 * (var(--pb-gutter) - var(--pb-opening-inset)));margin-left:auto;margin-right:auto}
+
+@media(min-width:900px){.pb .pb__desktop-title-line{display:block;white-space:nowrap}}
+@media(min-width:900px) and (max-width:1199px){.pb .pb__restaurant-heading:has(.pb__desktop-title-line) h1{font-size:56px}}
+@media(min-width:900px) and (max-width:1199px){.pb--travel-agents .pb__restaurant-heading h1{font-size:56px}}
+@media(min-width:640px) and (max-width:899px){.pb--travel-agents .pb__restaurant-heading h1{font-size:clamp(38px,6.25vw,48px)}}

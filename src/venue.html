@@ -1,0 +1,44 @@
+<main class="pb pb--restaurant" id="pb-site">
+  <!-- SHARED_HEADER -->
+  <section class="pb__restaurant" aria-labelledby="pb-venue-title">
+    <div class="pb__restaurant-intro">
+      <header class="pb__intro-header pb__restaurant-header">
+        <a class="pb__brand" href="./" aria-label="Певческая башня — главная"><img src="assets/logo.png" width="88" height="70" alt="Певческая башня"></a>
+        <button class="pb__menu-toggle" type="button" data-nav-open aria-haspopup="dialog" aria-controls="pb-navigation" aria-expanded="false">Меню <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </header>
+      <div class="pb__restaurant-heading"><h1 id="pb-venue-title"><!-- VENUE_TITLE --></h1><!-- VENUE_LOCATION --></div>
+      <div class="pb__restaurant-copy">
+        <p><!-- VENUE_DESCRIPTION --></p>
+        <div class="pb__restaurant-actions"><!-- VENUE_ACTIONS --></div>
+      </div>
+      <div class="pb__restaurant-gallery" aria-label="Фотографии пространства"><!-- VENUE_GALLERY --></div>
+    </div>
+    <div class="pb__restaurant-photo"><!-- VENUE_MAIN_PHOTO --></div>
+  </section>
+  <!-- SHARED_FORM -->
+  <!-- SHARED_CONTACTS -->
+  <!-- SHARED_ROUTE -->
+  <dialog class="pb__pdf pb__pdf--lightbox" id="pb-menu" aria-labelledby="pb-menu-title">
+    <header class="pb__pdf-header">
+      <h2 class="pb__sr-only" id="pb-menu-title">Меню пространства</h2>
+      <div class="pb__pdf-controls" aria-label="Страницы меню">
+        <button type="button" data-pdf-prev aria-label="Предыдущая страница" disabled>←</button><span class="pb__pdf-page-number" aria-live="polite">— / —</span><button type="button" data-pdf-next aria-label="Следующая страница" disabled>→</button>
+        <button type="button" data-pdf-out hidden disabled>−</button><span class="pb__pdf-zoom" hidden></span><button type="button" data-pdf-in hidden disabled>+</button><button type="button" data-pdf-fit hidden disabled>По ширине</button>
+      </div>
+      <button class="pb__pdf-close" type="button" aria-label="Закрыть меню">Закрыть <span aria-hidden="true">×</span></button>
+    </header>
+    <div class="pb__pdf-viewport" tabindex="0" aria-label="Меню ресторана. Используйте стрелки для перелистывания">
+      <div class="pb__pdf-status" role="status"><span data-pdf-message>Открываем меню…</span><button class="pb__button" type="button" data-pdf-retry hidden>Попробовать снова</button></div>
+      <div class="pb__pdf-page"><canvas class="pb__pdf-canvas" role="img" aria-label="Страница меню" hidden></canvas></div>
+    </div>
+  </dialog>
+  <dialog class="pb__navigation" id="pb-navigation" aria-label="Меню сайта">
+    <div class="pb__navigation-panel">
+    <div class="pb__navigation-header"><img src="assets/logo-white.png" width="88" height="70" alt="Певческая башня"><button class="pb__menu-toggle" type="button" data-nav-close aria-label="Закрыть навигацию">Меню <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <nav class="pb__navigation-links" aria-label="Разделы сайта"><a href="./#pb-spaces">Пространства</a><button type="button" data-pdf-source="assets/menu.pdf" data-pdf-title="Основное меню" aria-haspopup="dialog" aria-controls="pb-menu">Основное меню</button><a href="./#pb-agenda">Афиша</a><a href="travel-agents.html">Турагентам</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a></nav>
+    <div class="pb__nav-socials"><a href="https://vk.ru/bashnya_pushkin" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"><img src="assets/nav-vk.svg" width="28" height="28" alt=""></a><button type="button" aria-label="MAX" data-social><img src="assets/nav-max.svg" width="28" height="28" alt=""></button></div>
+    </div>
+  </dialog>
+  <!-- SHARED_BANQUET -->
+  <div class="pb__toast" id="pb-toast" role="status" hidden></div>
+</main>

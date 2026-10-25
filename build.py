@@ -1,0 +1,180 @@
+"""Build a dependency-free local preview and a Tilda T123 HTML fragment."""
+from pathlib import Path
+from html.parser import HTMLParser
+from html import escape
+from datetime import date
+import json
+import re
+
+SHORT_WORDS = re.compile(
+    r'(?<![\w-])(?:в|во|на|к|ко|с|со|у|о|об|обо|от|ото|по|до|за|из|изо|'
+    r'без|безо|для|при|про|под|подо|над|надо|перед|передо|через|между|'
+    r'около|возле|ради|и|а|но|не)[ \t]+(?=[А-Яа-яЁёA-Za-z0-9«„“"])', re.IGNORECASE)
+
+
+class Typography(HTMLParser):
+    """Bind prepositions in text while preserving HTML attributes and URLs."""
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        self.parts.append(self.get_starttag_text())
+
+    def handle_startendtag(self, tag, attrs):
+        self.parts.append(self.get_starttag_text())
+
+    def handle_endtag(self, tag):
+        self.parts.append(f'</{tag}>')
+
+    def handle_data(self, data):
+        self.parts.append(SHORT_WORDS.sub(lambda m: m[0].rstrip(' \t') + '\N{NO-BREAK SPACE}', data))
+
+    def handle_entityref(self, name):
+        self.parts.append(f'&{name};')
+
+    def handle_charref(self, name):
+        self.parts.append(f'&#{name};')
+
+    def handle_comment(self, data):
+        self.parts.append(f'<!--{data}-->')
+
+ROOT = Path(__file__).resolve().parent
+shared_header = (ROOT / 'src/header.html').read_text()
+shared_banquet = (ROOT / 'src/banquet-dialog.html').read_text()
+page = (ROOT / 'src/page.html').read_text()
+page = page.replace('<!-- SHARED_HEADER -->', shared_header.strip())
+page = page.replace('<!-- BANQUET_DIALOG -->', shared_banquet)
+schedule = json.loads((ROOT / 'src/schedule.json').read_text())
+months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
+weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+
+
+def schedule_rows(events):
+    rows = []
+    for event in sorted(events, key=lambda item: item['day']):
+        day = date(schedule['year'], schedule['month'], event['day'])
+        start = escape(event['start'])
+        times = f'<time datetime="{day.isoformat()}T{start}">{start}</time>'
+        if 'end' in event:
+            end = escape(event['end'])
+            times += f'–<time datetime="{day.isoformat()}T{end}">{end}</time>'
+        age = f'<span class="pb__schedule-age">{escape(event["age"])}</span>' if 'age' in event else ''
+        price = f'<span class="pb__schedule-price">{event["price"]} ₽</span>' if 'price' in event else ''
+        rows.append(f'''<li class="pb__schedule-row">
+        <time class="pb__schedule-date" datetime="{day.isoformat()}"><span class="pb__schedule-day">{day.day:02d}</span><span class="pb__schedule-weekday">{weekdays[day.weekday()]}</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time">{times}</span><h3 class="pb__schedule-title">{escape(event['title'])}{age}</h3></div>{price}
+      </li>''')
+    return '\n'.join(rows)
+
+
+page = page.replace('<!-- SCHEDULE_MONTH -->', months[schedule['month'] - 1])
+page = page.replace('<!-- SCHEDULE_WORKSHOPS -->', schedule_rows(schedule['workshops']))
+page = page.replace('<!-- SCHEDULE_MUSIC -->', schedule_rows(schedule['music']))
+typography = Typography()
+typography.feed(page)
+typography.close()
+page = ''.join(typography.parts)
+css = (ROOT / 'src/styles.css').read_text()
+js = (ROOT / 'src/app.js').read_text() + '\n' + (ROOT / 'src/banquet.js').read_text()
+form_js = (ROOT / 'src/contact-form.js').read_text()
+js += '\n' + form_js
+heading_js = (ROOT / 'src/heading-motion.js').read_text()
+js += '\n' + heading_js
+pdf_js = (ROOT / 'src/pdf-viewer.js').read_text()
+js += '\n' + pdf_js
+fragment = f'<style>\n{css}\n</style>\n{page}\n<script>\n{js}\n</script>\n'
+(ROOT / 'tilda-t123.html').write_text(fragment)
+(ROOT / 'dist/index.html').write_text('''<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Певческая башня — гастрономическое и культурное пространство</title><meta name="description" content="Рестораны, апартаменты, обзорная площадка и залы для ваших событий в исторической Певческой башне в Пушкине."><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#065781"><link rel="icon" href="assets/logo.png"><link rel="preload" href="assets/fonts/bebas-neue-cyrillic.ttf" as="font" type="font/ttf" crossorigin><style>body{margin:0;background:#f7f2e9}</style></head><body>
+''' + fragment + '</body></html>\n')
+# Every space uses the same page, feedback form and footer.
+venue_template = (ROOT / 'src/venue.html').read_text()
+venues = json.loads((ROOT / 'src/venues.json').read_text())
+contact_start = page.index('  <section class="pb__contact"')
+footer_start = page.index('  <section class="pb__contacts ')
+form = page[contact_start:footer_start]
+contacts = page[footer_start:page.index('  <dialog class="pb__pdf')]
+contacts = contacts.replace('<section ', '<footer ', 1).replace('</section>', '</footer>')
+route = page[page.index('  <dialog class="pb__route'):page.index('  <dialog class="pb__navigation')]
+venue_css = css + '\n' + (ROOT / 'src/restaurant.css').read_text()
+venue_js = '\n'.join([(ROOT / 'src/restaurant.js').read_text(), (ROOT / 'src/banquet.js').read_text(), form_js, heading_js, pdf_js])
+internal_header = shared_header.replace('href="#pb-spaces"', 'href="./#pb-spaces"').replace('href="#pb-agenda"', 'href="./#pb-agenda"')
+
+travel_agents = json.loads((ROOT / 'src/travel-agents.json').read_text())
+for venue in venues + [travel_agents]:
+    title = escape(venue['title'])
+    heading_title = title
+    if 'desktopTitleLines' in venue:
+        heading_title = ' '.join('<span class="pb__desktop-title-line">' + escape(line) + '</span>' for line in venue['desktopTitleLines'])
+    floor = ', ' + escape(venue['floor']) if venue['floor'] else ''
+    location = f'<p class="pb__restaurant-location"><span aria-hidden="true">●</span> <a href="./#pb-spaces" aria-label="Вернуться к пространствам башни">Башня</a>{floor}</p>'
+    if not venue.get('showLocation', True):
+        location = ''
+    actions = []
+    for index, menu in enumerate(venue['menus']):
+        light = ' pb__button--light' if index else ''
+        actions.append(f'<a class="pb__button{light}" href="#pb-menu" data-pdf-source="{escape(menu["source"])}" data-pdf-title="{escape(menu["title"])}" aria-haspopup="dialog" aria-controls="pb-menu">{escape(menu["label"])}</a>')
+    if 'action' in venue:
+        action = venue['action']
+        if action.get('type') == 'booking':
+            actions.append(f'<button class="pb__button" type="button" data-booking-open>{escape(action["label"])}</button>')
+        elif action.get('type') == 'download':
+            actions.append(f'<a class="pb__button" href="{escape(action["href"])}" download="{escape(action["filename"])}" type="application/pdf">{escape(action["label"])}</a>')
+        else:
+            actions.append(f'<a class="pb__button" href="{escape(action["href"])}">{escape(action["label"])}</a>')
+    gallery = []
+    for image in venue['gallery']:
+        caption = escape(image['alt'])
+        src = escape(image['src'])
+        gallery.append(f'<button type="button" data-gallery-src="{src}" data-gallery-alt="{caption}" aria-label="Показать: {caption}" aria-pressed="false"><img src="{src}" width="{image["width"]}" height="{image["height"]}" alt="{caption}" loading="lazy"></button>')
+    position = ' style="object-position:' + escape(venue['imagePosition']) + '"' if 'imagePosition' in venue else ''
+    photo = f'<img id="pb-venue-photo" src="{escape(venue["mainImage"])}" width="{venue["mainWidth"]}" height="{venue["mainHeight"]}" alt="{escape(venue["mainAlt"])}" fetchpriority="high"{position}>'
+    replacements = {
+        '<!-- SHARED_HEADER -->': internal_header.strip(),
+        '<!-- SHARED_BANQUET -->': shared_banquet.strip(),
+        '<!-- VENUE_TITLE -->': heading_title,
+        '<!-- VENUE_LOCATION -->': location,
+        '<!-- VENUE_DESCRIPTION -->': escape(venue['description']),
+        '<!-- VENUE_ACTIONS -->': ''.join(actions),
+        '<!-- VENUE_GALLERY -->': ''.join(gallery),
+        '<!-- VENUE_MAIN_PHOTO -->': photo,
+        '<!-- SHARED_FORM -->': form.strip(),
+        '<!-- SHARED_CONTACTS -->': contacts.strip(),
+        '<!-- SHARED_ROUTE -->': route.strip(),
+    }
+    source = venue_template
+    if not actions:
+        source = source.replace('<div class="pb__restaurant-actions"><!-- VENUE_ACTIONS --></div>', '')
+    for placeholder, content in replacements.items():
+        source = source.replace(placeholder, content)
+    if venue['slug'] == 'travel-agents':
+        source = source.replace('class="pb pb--restaurant"', 'class="pb pb--restaurant pb--travel-agents"')
+        source = source.replace('<a href="travel-agents.html">', '<a href="travel-agents.html" aria-current="page">')
+    typography = Typography()
+    typography.feed(source)
+    typography.close()
+    description = escape(venue['description'], quote=True)
+    document = f'''<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{title} — Певческая башня</title><meta name="description" content="{description}"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#065781"><link rel="icon" href="assets/logo.png"><link rel="preload" href="assets/fonts/bebas-neue-cyrillic.ttf" as="font" type="font/ttf" crossorigin><style>body{{margin:0;background:#f7f2e9}}</style></head><body>
+<style>{venue_css}</style>
+{''.join(typography.parts)}
+<script>{venue_js}</script>
+</body></html>
+'''
+    (ROOT / 'dist' / (venue['slug'] + '.html')).write_text(document)
+career_source = (ROOT / 'src/vacancies.html').read_text()
+menus = venue_template[venue_template.index('  <dialog class="pb__pdf'):venue_template.index('  <div class="pb__toast"')]
+menus = menus.replace('  <!-- SHARED_BANQUET -->\n', '')
+menus = menus.replace('<a href="vacancies.html">', '<a href="vacancies.html" aria-current="page">')
+for placeholder, content in {'<!-- SHARED_HEADER -->': internal_header.replace('<a href="vacancies.html">', '<a href="vacancies.html" aria-current="page">').strip(), '<!-- SHARED_CONTACTS -->': contacts.strip(), '<!-- SHARED_ROUTE -->': route.strip(), '<!-- SHARED_MENUS -->': menus.strip(), '<!-- SHARED_BANQUET -->': shared_banquet.strip()}.items():
+    career_source = career_source.replace(placeholder, content)
+typography = Typography()
+typography.feed(career_source)
+typography.close()
+career_css = css + '\n' + (ROOT / 'src/vacancies.css').read_text()
+career_js = venue_js
+(ROOT / 'dist/vacancies.html').write_text('''<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Карьера — Певческая башня</title><meta name="description" content="Карьера в Певческой башне. Оставьте заявку: желаемая должность, опыт работы, ФИО и телефон."><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#065781"><link rel="icon" href="assets/logo.png"><link rel="preload" href="assets/fonts/bebas-neue-cyrillic.ttf" as="font" type="font/ttf" crossorigin><style>body{margin:0;background:#f7f2e9}</style></head><body>
+''' + f'<style>{career_css}</style>\n' + ''.join(typography.parts) + f'\n<script>{career_js}</script>\n</body></html>\n')
+print('Готово: главная, ' + str(len(venues)) + ' страниц пространств, турагентам, карьера и tilda-t123.html')
