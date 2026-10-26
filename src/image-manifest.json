@@ -1083,24 +1083,34 @@
     "compression": "lossless"
   },
   "assets/venues/shop/3.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 241372,
+    "width": 2560,
+    "height": 2560,
+    "originalBytes": 1613717,
     "variants": [
       {
-        "src": "assets/optimized/3-d848e8a04d29-320.webp",
+        "src": "assets/optimized/3-6ee55f5c4bf7-320.webp",
         "width": 320,
-        "bytes": 39194
+        "bytes": 96222
       },
       {
-        "src": "assets/optimized/3-d848e8a04d29-640.webp",
+        "src": "assets/optimized/3-6ee55f5c4bf7-640.webp",
         "width": 640,
-        "bytes": 141918
+        "bytes": 359938
       },
       {
-        "src": "assets/optimized/3-d848e8a04d29-920.jpg",
-        "width": 920,
-        "bytes": 241372
+        "src": "assets/optimized/3-6ee55f5c4bf7-960.webp",
+        "width": 960,
+        "bytes": 781896
+      },
+      {
+        "src": "assets/optimized/3-6ee55f5c4bf7-1280.webp",
+        "width": 1280,
+        "bytes": 1346866
+      },
+      {
+        "src": "assets/optimized/3-6ee55f5c4bf7-2560.jpg",
+        "width": 2560,
+        "bytes": 1613717
       }
     ],
     "compression": "lossless"
