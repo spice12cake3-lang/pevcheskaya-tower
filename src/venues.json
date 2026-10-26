@@ -102,6 +102,12 @@
         "alt": "Сервировка длинного стола в ресторане Индия",
         "width": 2560,
         "height": 1751
+      },
+      {
+        "src": "assets/venues/india/3.jpg",
+        "alt": "Уютная зона ресторана Индия с резной перегородкой",
+        "width": 920,
+        "height": 460
       }
     ],
     "menus": [
@@ -244,6 +250,12 @@
         "alt": "Виниловые пластинки и музыкальные детали караоке-бара",
         "width": 1280,
         "height": 853
+      },
+      {
+        "src": "assets/venues/karaoke/3.jpg",
+        "alt": "Микрофон в караоке-баре",
+        "width": 813,
+        "height": 843
       }
     ],
     "menus": [
@@ -332,15 +344,15 @@
     "gallery": [
       {
         "src": "assets/venues/shop/1.jpg",
-        "alt": "Авторские украшения в магазине",
-        "width": 920,
-        "height": 460
+        "alt": "Матрёшки и сувениры в магазине Певческой башни",
+        "width": 2560,
+        "height": 1707
       },
       {
         "src": "assets/venues/shop/2.jpg",
-        "alt": "Дизайнерские аксессуары и украшения",
-        "width": 920,
-        "height": 460
+        "alt": "Витрина с украшениями и изделиями из янтаря",
+        "width": 2560,
+        "height": 1707
       },
       {
         "src": "assets/venues/shop/3.jpg",
@@ -350,8 +362,8 @@
       }
     ],
     "menus": [],
-    "mainWidth": 920,
-    "mainHeight": 460,
+    "mainWidth": 2560,
+    "mainHeight": 1707,
     "desktopTitleLines": [
       "Магазин подарков",
       "и сувениров"

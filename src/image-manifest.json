@@ -181,6 +181,29 @@
     ],
     "compression": "lossless"
   },
+  "assets/kids-card.jpg": {
+    "width": 1821,
+    "height": 1707,
+    "originalBytes": 930499,
+    "variants": [
+      {
+        "src": "assets/optimized/kids-card-d5dc759506fb-320.webp",
+        "width": 320,
+        "bytes": 142692
+      },
+      {
+        "src": "assets/optimized/kids-card-d5dc759506fb-640.webp",
+        "width": 640,
+        "bytes": 507874
+      },
+      {
+        "src": "assets/optimized/kids-card-d5dc759506fb-1821.jpg",
+        "width": 1821,
+        "bytes": 930499
+      }
+    ],
+    "compression": "lossless"
+  },
   "assets/kids.jpg": {
     "width": 920,
     "height": 460,
@@ -313,26 +336,37 @@
     ]
   },
   "assets/shop.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 108637,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 3973457,
     "variants": [
       {
-        "src": "assets/optimized/shop-d933da03f291-320.webp",
+        "src": "assets/optimized/shop-ffaf87ad1899-320.webp",
         "width": 320,
-        "bytes": 8656
+        "bytes": 124224
       },
       {
-        "src": "assets/optimized/shop-d933da03f291-640.webp",
+        "src": "assets/optimized/shop-ffaf87ad1899-640.webp",
         "width": 640,
-        "bytes": 30510
+        "bytes": 449484
       },
       {
-        "src": "assets/optimized/shop-d933da03f291-920.webp",
-        "width": 920,
-        "bytes": 59108
+        "src": "assets/optimized/shop-ffaf87ad1899-960.webp",
+        "width": 960,
+        "bytes": 927728
+      },
+      {
+        "src": "assets/optimized/shop-ffaf87ad1899-1280.webp",
+        "width": 1280,
+        "bytes": 1583242
+      },
+      {
+        "src": "assets/optimized/shop-ffaf87ad1899-2560.jpg",
+        "width": 2560,
+        "bytes": 3973457
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/sochi.jpg": {
     "width": 2560,
@@ -750,6 +784,24 @@
     ],
     "compression": "lossless"
   },
+  "assets/venues/india/3.jpg": {
+    "width": 920,
+    "height": 460,
+    "originalBytes": 153519,
+    "variants": [
+      {
+        "src": "assets/optimized/3-04120427017c-320.webp",
+        "width": 320,
+        "bytes": 91516
+      },
+      {
+        "src": "assets/optimized/3-04120427017c-920.jpg",
+        "width": 920,
+        "bytes": 153519
+      }
+    ],
+    "compression": "lossless"
+  },
   "assets/venues/karaoke/1.jpg": {
     "width": 1280,
     "height": 853,
@@ -782,6 +834,24 @@
         "src": "assets/optimized/2-f9ee28b73dca-1280.jpg",
         "width": 1280,
         "bytes": 267277
+      }
+    ],
+    "compression": "lossless"
+  },
+  "assets/venues/karaoke/3.jpg": {
+    "width": 813,
+    "height": 843,
+    "originalBytes": 193195,
+    "variants": [
+      {
+        "src": "assets/optimized/3-8ecdeacf2f3d-320.webp",
+        "width": 320,
+        "bytes": 128064
+      },
+      {
+        "src": "assets/optimized/3-8ecdeacf2f3d-813.jpg",
+        "width": 813,
+        "bytes": 193195
       }
     ],
     "compression": "lossless"
@@ -952,48 +1022,65 @@
     "compression": "lossless"
   },
   "assets/venues/shop/1.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 428447,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 3865675,
     "variants": [
       {
-        "src": "assets/optimized/1-a6fe45d6d2fe-320.webp",
+        "src": "assets/optimized/1-269607796a38-320.webp",
         "width": 320,
-        "bytes": 13978
+        "bytes": 129638
       },
       {
-        "src": "assets/optimized/1-a6fe45d6d2fe-640.webp",
+        "src": "assets/optimized/1-269607796a38-640.webp",
         "width": 640,
-        "bytes": 42392
+        "bytes": 470434
       },
       {
-        "src": "assets/optimized/1-a6fe45d6d2fe-920.webp",
-        "width": 920,
-        "bytes": 76818
+        "src": "assets/optimized/1-269607796a38-960.webp",
+        "width": 960,
+        "bytes": 947508
+      },
+      {
+        "src": "assets/optimized/1-269607796a38-1280.webp",
+        "width": 1280,
+        "bytes": 1606962
+      },
+      {
+        "src": "assets/optimized/1-269607796a38-2560.jpg",
+        "width": 2560,
+        "bytes": 3865675
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/shop/2.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 417235,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 646479,
     "variants": [
       {
-        "src": "assets/optimized/2-a0cec461becb-320.webp",
+        "src": "assets/optimized/2-436e729aa957-320.webp",
         "width": 320,
-        "bytes": 12552
+        "bytes": 90514
       },
       {
-        "src": "assets/optimized/2-a0cec461becb-640.webp",
+        "src": "assets/optimized/2-436e729aa957-640.webp",
         "width": 640,
-        "bytes": 37308
+        "bytes": 305222
       },
       {
-        "src": "assets/optimized/2-a0cec461becb-920.webp",
-        "width": 920,
-        "bytes": 69036
+        "src": "assets/optimized/2-436e729aa957-960.webp",
+        "width": 960,
+        "bytes": 624844
+      },
+      {
+        "src": "assets/optimized/2-436e729aa957-2560.jpg",
+        "width": 2560,
+        "bytes": 646479
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/shop/3.jpg": {
     "width": 920,
@@ -1001,21 +1088,22 @@
     "originalBytes": 241372,
     "variants": [
       {
-        "src": "assets/optimized/3-5aa169be2319-320.webp",
+        "src": "assets/optimized/3-d848e8a04d29-320.webp",
         "width": 320,
-        "bytes": 5788
+        "bytes": 39194
       },
       {
-        "src": "assets/optimized/3-5aa169be2319-640.webp",
+        "src": "assets/optimized/3-d848e8a04d29-640.webp",
         "width": 640,
-        "bytes": 17560
+        "bytes": 141918
       },
       {
-        "src": "assets/optimized/3-5aa169be2319-920.webp",
+        "src": "assets/optimized/3-d848e8a04d29-920.jpg",
         "width": 920,
-        "bytes": 30158
+        "bytes": 241372
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/sochi/1.jpg": {
     "width": 2560,
