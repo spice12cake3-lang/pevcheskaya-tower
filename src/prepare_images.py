@@ -7,11 +7,17 @@ from pathlib import Path
 from hashlib import sha256
 import json
 import re
+import shutil
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
+LOSSLESS_SOURCES = {
+    'assets/apartments.jpg', 'assets/sochi.jpg', 'assets/odessa.jpg',
+    *(f'assets/venues/{venue}/{number}.jpg'
+      for venue in ('apartments', 'sochi', 'odessa') for number in (1, 2, 3)),
+}
 sources = '\n'.join(p.read_text() for p in (ROOT / 'src').iterdir()
-                    if p.suffix in ('.html', '.json'))
+                    if p.suffix in ('.html', '.json') and p.name != 'image-manifest.json')
 paths = sorted(set(re.findall(r'assets/[\w/.-]+\.(?:png|jpe?g)', sources)))
 manifest = {}
 for source in paths:
@@ -19,23 +25,40 @@ for source in paths:
     # Small logos and attribution labels are already lightweight and stay lossless.
     if path.stat().st_size < 30_000:
         continue
-    digest = sha256(path.read_bytes() + b'webp-v2-q82').hexdigest()[:12]
+    lossless = source in LOSSLESS_SOURCES
+    recipe = b'webp-v3-lossless' if lossless else b'webp-v2-q82'
+    digest = sha256(path.read_bytes() + recipe).hexdigest()[:12]
     with Image.open(path) as original:
         image = ImageOps.exif_transpose(original)
         if image.mode not in ('RGB', 'RGBA'):
             image = image.convert('RGBA' if 'transparency' in image.info else 'RGB')
-        maximum = min(image.width, 1920)
+        maximum = image.width if lossless else min(image.width, 1920)
         widths = sorted(set(w for w in (320, 640, 960, 1280, maximum) if w <= maximum))
         variants = []
         for width in widths:
             height = round(width * image.height / image.width)
-            resized = image.resize((width, height), Image.Resampling.LANCZOS)
             target = f'assets/optimized/{path.stem}-{digest}-{width}.webp'
             destination = ROOT / 'dist' / target
             destination.parent.mkdir(exist_ok=True)
-            resized.save(destination, 'WEBP', method=6, quality=82, alpha_quality=90)
+            if not destination.exists():
+                resized = image if width == image.width else image.resize((width, height), Image.Resampling.LANCZOS)
+                if lossless:
+                    resized.save(destination, 'WEBP', lossless=True, method=6,
+                                 icc_profile=original.info.get('icc_profile', b''))
+                else:
+                    resized.save(destination, 'WEBP', method=6, quality=82, alpha_quality=90)
+            # A lossless WebP of an existing JPEG can be larger than the JPEG.
+            # Keep smaller responsive sizes, then use the untouched original.
+            if lossless and destination.stat().st_size >= path.stat().st_size:
+                if width == image.width:
+                    original_target = str(Path(target).with_suffix(path.suffix))
+                    shutil.copyfile(path, ROOT / 'dist' / original_target)
+                    variants.append({'src': original_target, 'width': width, 'bytes': path.stat().st_size})
+                continue
             variants.append({'src': target, 'width': width, 'bytes': destination.stat().st_size})
         manifest[source] = {'width': image.width, 'height': image.height,
                             'originalBytes': path.stat().st_size, 'variants': variants}
+    if lossless:
+        manifest[source]['compression'] = 'lossless'
 (ROOT / 'src/image-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
 print(f'Prepared {len(manifest)} images, {sum(len(m["variants"]) for m in manifest.values())} variants')

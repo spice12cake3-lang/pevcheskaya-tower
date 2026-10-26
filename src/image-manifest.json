@@ -1,25 +1,31 @@
 {
   "assets/apartments.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 187887,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 773499,
     "variants": [
       {
-        "src": "assets/optimized/apartments-11a2a9e65cc7-320.webp",
+        "src": "assets/optimized/apartments-69f82d0554d0-320.webp",
         "width": 320,
-        "bytes": 14714
+        "bytes": 84242
       },
       {
-        "src": "assets/optimized/apartments-11a2a9e65cc7-640.webp",
+        "src": "assets/optimized/apartments-69f82d0554d0-640.webp",
         "width": 640,
-        "bytes": 54258
+        "bytes": 301010
       },
       {
-        "src": "assets/optimized/apartments-11a2a9e65cc7-920.webp",
-        "width": 920,
-        "bytes": 109624
+        "src": "assets/optimized/apartments-69f82d0554d0-960.webp",
+        "width": 960,
+        "bytes": 623424
+      },
+      {
+        "src": "assets/optimized/apartments-69f82d0554d0-2560.jpg",
+        "width": 2560,
+        "bytes": 773499
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/china.jpg": {
     "width": 920,
@@ -240,26 +246,37 @@
     ]
   },
   "assets/odessa.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 125491,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 4041397,
     "variants": [
       {
-        "src": "assets/optimized/odessa-101405683dc1-320.webp",
+        "src": "assets/optimized/odessa-9c3e2949a145-320.webp",
         "width": 320,
-        "bytes": 13086
+        "bytes": 107796
       },
       {
-        "src": "assets/optimized/odessa-101405683dc1-640.webp",
+        "src": "assets/optimized/odessa-9c3e2949a145-640.webp",
         "width": 640,
-        "bytes": 37286
+        "bytes": 406924
       },
       {
-        "src": "assets/optimized/odessa-101405683dc1-920.webp",
-        "width": 920,
-        "bytes": 64902
+        "src": "assets/optimized/odessa-9c3e2949a145-960.webp",
+        "width": 960,
+        "bytes": 869834
+      },
+      {
+        "src": "assets/optimized/odessa-9c3e2949a145-1280.webp",
+        "width": 1280,
+        "bytes": 1515528
+      },
+      {
+        "src": "assets/optimized/odessa-9c3e2949a145-2560.jpg",
+        "width": 2560,
+        "bytes": 4041397
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/route-map.png": {
     "width": 1799,
@@ -316,26 +333,32 @@
     ]
   },
   "assets/sochi.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 147130,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 892238,
     "variants": [
       {
-        "src": "assets/optimized/sochi-a0d951adf750-320.webp",
+        "src": "assets/optimized/sochi-6c457969db43-320.webp",
         "width": 320,
-        "bytes": 14652
+        "bytes": 88872
       },
       {
-        "src": "assets/optimized/sochi-a0d951adf750-640.webp",
+        "src": "assets/optimized/sochi-6c457969db43-640.webp",
         "width": 640,
-        "bytes": 42704
+        "bytes": 320912
       },
       {
-        "src": "assets/optimized/sochi-a0d951adf750-920.webp",
-        "width": 920,
-        "bytes": 71742
+        "src": "assets/optimized/sochi-6c457969db43-960.webp",
+        "width": 960,
+        "bytes": 672580
+      },
+      {
+        "src": "assets/optimized/sochi-6c457969db43-2560.jpg",
+        "width": 2560,
+        "bytes": 892238
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/sochi/banquet.jpg": {
     "width": 2560,
@@ -530,70 +553,78 @@
     ]
   },
   "assets/venues/apartments/1.jpg": {
-    "width": 920,
-    "height": 462,
-    "originalBytes": 371573,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 809568,
     "variants": [
       {
-        "src": "assets/optimized/1-37c4213a0a37-320.webp",
+        "src": "assets/optimized/1-3ae643872261-320.webp",
         "width": 320,
-        "bytes": 9490
+        "bytes": 84308
       },
       {
-        "src": "assets/optimized/1-37c4213a0a37-640.webp",
+        "src": "assets/optimized/1-3ae643872261-640.webp",
         "width": 640,
-        "bytes": 27986
+        "bytes": 309916
       },
       {
-        "src": "assets/optimized/1-37c4213a0a37-920.webp",
-        "width": 920,
-        "bytes": 47930
+        "src": "assets/optimized/1-3ae643872261-960.webp",
+        "width": 960,
+        "bytes": 655944
+      },
+      {
+        "src": "assets/optimized/1-3ae643872261-2560.jpg",
+        "width": 2560,
+        "bytes": 809568
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/apartments/2.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 187159,
+    "width": 1500,
+    "height": 1000,
+    "originalBytes": 263672,
     "variants": [
       {
-        "src": "assets/optimized/2-13e88fb4472c-320.webp",
+        "src": "assets/optimized/2-0161b9aace7f-320.webp",
         "width": 320,
-        "bytes": 9684
+        "bytes": 78652
       },
       {
-        "src": "assets/optimized/2-13e88fb4472c-640.webp",
-        "width": 640,
-        "bytes": 28072
-      },
-      {
-        "src": "assets/optimized/2-13e88fb4472c-920.webp",
-        "width": 920,
-        "bytes": 51226
+        "src": "assets/optimized/2-0161b9aace7f-1500.jpg",
+        "width": 1500,
+        "bytes": 263672
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/apartments/3.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 189245,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 747842,
     "variants": [
       {
-        "src": "assets/optimized/3-b27338fd1501-320.webp",
+        "src": "assets/optimized/3-4c0ff8cd2097-320.webp",
         "width": 320,
-        "bytes": 10868
+        "bytes": 74706
       },
       {
-        "src": "assets/optimized/3-b27338fd1501-640.webp",
+        "src": "assets/optimized/3-4c0ff8cd2097-640.webp",
         "width": 640,
-        "bytes": 34174
+        "bytes": 264494
       },
       {
-        "src": "assets/optimized/3-b27338fd1501-920.webp",
-        "width": 920,
-        "bytes": 56454
+        "src": "assets/optimized/3-4c0ff8cd2097-960.webp",
+        "width": 960,
+        "bytes": 556090
+      },
+      {
+        "src": "assets/optimized/3-4c0ff8cd2097-2560.jpg",
+        "width": 2560,
+        "bytes": 747842
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/china/1.jpg": {
     "width": 920,
@@ -860,70 +891,103 @@
     ]
   },
   "assets/venues/odessa/1.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 226475,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 3888004,
     "variants": [
       {
-        "src": "assets/optimized/1-7e80f782ef75-320.webp",
+        "src": "assets/optimized/1-515cf88db242-320.webp",
         "width": 320,
-        "bytes": 11134
+        "bytes": 97268
       },
       {
-        "src": "assets/optimized/1-7e80f782ef75-640.webp",
+        "src": "assets/optimized/1-515cf88db242-640.webp",
         "width": 640,
-        "bytes": 35540
+        "bytes": 365976
       },
       {
-        "src": "assets/optimized/1-7e80f782ef75-920.webp",
-        "width": 920,
-        "bytes": 66382
+        "src": "assets/optimized/1-515cf88db242-960.webp",
+        "width": 960,
+        "bytes": 796760
+      },
+      {
+        "src": "assets/optimized/1-515cf88db242-1280.webp",
+        "width": 1280,
+        "bytes": 1402330
+      },
+      {
+        "src": "assets/optimized/1-515cf88db242-2560.jpg",
+        "width": 2560,
+        "bytes": 3888004
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/odessa/2.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 238968,
+    "width": 2560,
+    "height": 1706,
+    "originalBytes": 3570361,
     "variants": [
       {
-        "src": "assets/optimized/2-e1134fbf964e-320.webp",
+        "src": "assets/optimized/2-de0ae9c70d71-320.webp",
         "width": 320,
-        "bytes": 13604
+        "bytes": 93606
       },
       {
-        "src": "assets/optimized/2-e1134fbf964e-640.webp",
+        "src": "assets/optimized/2-de0ae9c70d71-640.webp",
         "width": 640,
-        "bytes": 41038
+        "bytes": 348912
       },
       {
-        "src": "assets/optimized/2-e1134fbf964e-920.webp",
-        "width": 920,
-        "bytes": 71998
+        "src": "assets/optimized/2-de0ae9c70d71-960.webp",
+        "width": 960,
+        "bytes": 757538
+      },
+      {
+        "src": "assets/optimized/2-de0ae9c70d71-1280.webp",
+        "width": 1280,
+        "bytes": 1331206
+      },
+      {
+        "src": "assets/optimized/2-de0ae9c70d71-2560.jpg",
+        "width": 2560,
+        "bytes": 3570361
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/odessa/3.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 245171,
+    "width": 1707,
+    "height": 2560,
+    "originalBytes": 3287656,
     "variants": [
       {
-        "src": "assets/optimized/3-b79e55616fbe-320.webp",
+        "src": "assets/optimized/3-9475567e9dad-320.webp",
         "width": 320,
-        "bytes": 12376
+        "bytes": 201786
       },
       {
-        "src": "assets/optimized/3-b79e55616fbe-640.webp",
+        "src": "assets/optimized/3-9475567e9dad-640.webp",
         "width": 640,
-        "bytes": 39962
+        "bytes": 727544
       },
       {
-        "src": "assets/optimized/3-b79e55616fbe-920.webp",
-        "width": 920,
-        "bytes": 81260
+        "src": "assets/optimized/3-9475567e9dad-960.webp",
+        "width": 960,
+        "bytes": 1571778
+      },
+      {
+        "src": "assets/optimized/3-9475567e9dad-1280.webp",
+        "width": 1280,
+        "bytes": 2700688
+      },
+      {
+        "src": "assets/optimized/3-9475567e9dad-1707.jpg",
+        "width": 1707,
+        "bytes": 3287656
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/shop/1.jpg": {
     "width": 920,
@@ -992,80 +1056,88 @@
     ]
   },
   "assets/venues/sochi/1.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 517458,
-    "variants": [
-      {
-        "src": "assets/optimized/1-22377d136a59-320.webp",
-        "width": 320,
-        "bytes": 15288
-      },
-      {
-        "src": "assets/optimized/1-22377d136a59-640.webp",
-        "width": 640,
-        "bytes": 47758
-      },
-      {
-        "src": "assets/optimized/1-22377d136a59-920.webp",
-        "width": 920,
-        "bytes": 76776
-      }
-    ]
-  },
-  "assets/venues/sochi/2.jpg": {
     "width": 2560,
     "height": 1707,
     "originalBytes": 1053311,
     "variants": [
       {
-        "src": "assets/optimized/2-94e9f214b379-320.webp",
+        "src": "assets/optimized/1-02c11eab4f31-320.webp",
         "width": 320,
-        "bytes": 15926
+        "bytes": 89196
       },
       {
-        "src": "assets/optimized/2-94e9f214b379-640.webp",
+        "src": "assets/optimized/1-02c11eab4f31-640.webp",
         "width": 640,
-        "bytes": 48120
+        "bytes": 334016
       },
       {
-        "src": "assets/optimized/2-94e9f214b379-960.webp",
+        "src": "assets/optimized/1-02c11eab4f31-960.webp",
         "width": 960,
-        "bytes": 92094
+        "bytes": 703866
       },
       {
-        "src": "assets/optimized/2-94e9f214b379-1280.webp",
-        "width": 1280,
-        "bytes": 153534
-      },
-      {
-        "src": "assets/optimized/2-94e9f214b379-1920.webp",
-        "width": 1920,
-        "bytes": 340896
+        "src": "assets/optimized/1-02c11eab4f31-2560.jpg",
+        "width": 2560,
+        "bytes": 1053311
       }
-    ]
+    ],
+    "compression": "lossless"
   },
-  "assets/venues/sochi/3.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 280405,
+  "assets/venues/sochi/2.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 943266,
     "variants": [
       {
-        "src": "assets/optimized/3-1f5715221dde-320.webp",
+        "src": "assets/optimized/2-e8a8d1b7ca95-320.webp",
         "width": 320,
-        "bytes": 16206
+        "bytes": 91564
       },
       {
-        "src": "assets/optimized/3-1f5715221dde-640.webp",
+        "src": "assets/optimized/2-e8a8d1b7ca95-640.webp",
         "width": 640,
-        "bytes": 54998
+        "bytes": 320444
       },
       {
-        "src": "assets/optimized/3-1f5715221dde-920.webp",
-        "width": 920,
-        "bytes": 99262
+        "src": "assets/optimized/2-e8a8d1b7ca95-960.webp",
+        "width": 960,
+        "bytes": 679092
+      },
+      {
+        "src": "assets/optimized/2-e8a8d1b7ca95-2560.jpg",
+        "width": 2560,
+        "bytes": 943266
       }
-    ]
+    ],
+    "compression": "lossless"
+  },
+  "assets/venues/sochi/3.jpg": {
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 850516,
+    "variants": [
+      {
+        "src": "assets/optimized/3-869b88bd77ea-320.webp",
+        "width": 320,
+        "bytes": 96920
+      },
+      {
+        "src": "assets/optimized/3-869b88bd77ea-640.webp",
+        "width": 640,
+        "bytes": 342044
+      },
+      {
+        "src": "assets/optimized/3-869b88bd77ea-960.webp",
+        "width": 960,
+        "bytes": 711598
+      },
+      {
+        "src": "assets/optimized/3-869b88bd77ea-2560.jpg",
+        "width": 2560,
+        "bytes": 850516
+      }
+    ],
+    "compression": "lossless"
   },
   "assets/venues/viewpoint/1.jpg": {
     "width": 920,

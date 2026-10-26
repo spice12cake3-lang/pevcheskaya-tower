@@ -9,21 +9,21 @@
     "gallery": [
       {
         "src": "assets/venues/sochi/1.jpg",
-        "alt": "Интерьер ресторана Сочи у окон",
-        "width": 920,
-        "height": 460
+        "alt": "Зал ресторана Сочи с люстрами и жёлтыми шторами",
+        "width": 2560,
+        "height": 1707
       },
       {
         "src": "assets/venues/sochi/2.jpg",
-        "alt": "Светлый зал ресторана Сочи",
+        "alt": "Детали интерьера ресторана Сочи у окна",
         "width": 2560,
         "height": 1707
       },
       {
         "src": "assets/venues/sochi/3.jpg",
-        "alt": "Банкетный зал Сочи с жёлтой колонной",
-        "width": 920,
-        "height": 460
+        "alt": "Банкетная сервировка в ресторане Сочи",
+        "width": 2560,
+        "height": 1707
       }
     ],
     "menus": [
@@ -38,8 +38,8 @@
         "title": "Винная карта"
       }
     ],
-    "mainWidth": 920,
-    "mainHeight": 460
+    "mainWidth": 2560,
+    "mainHeight": 1707
   },
   {
     "slug": "odessa",
@@ -51,21 +51,21 @@
     "gallery": [
       {
         "src": "assets/venues/odessa/1.jpg",
-        "alt": "Лаунж-зона ресторана Одесса",
-        "width": 920,
-        "height": 460
+        "alt": "Места у окон в ресторане Одесса",
+        "width": 2560,
+        "height": 1707
       },
       {
         "src": "assets/venues/odessa/2.jpg",
-        "alt": "Сервировка столов в ресторане Одесса",
-        "width": 920,
-        "height": 460
+        "alt": "Круглый стол для компании в ресторане Одесса",
+        "width": 2560,
+        "height": 1706
       },
       {
         "src": "assets/venues/odessa/3.jpg",
-        "alt": "Отдельная зона ресторана Одесса",
-        "width": 920,
-        "height": 460
+        "alt": "Морские детали интерьера ресторана Одесса",
+        "width": 1707,
+        "height": 2560
       }
     ],
     "menus": [
@@ -80,8 +80,8 @@
         "title": "Винная карта"
       }
     ],
-    "mainWidth": 920,
-    "mainHeight": 460
+    "mainWidth": 2560,
+    "mainHeight": 1707
   },
   {
     "slug": "india",
@@ -278,21 +278,21 @@
     "gallery": [
       {
         "src": "assets/venues/apartments/1.jpg",
-        "alt": "Интерьер апартаментов Марьяж",
-        "width": 920,
-        "height": 462
+        "alt": "Спальня с высокими окнами в апартаментах Марьяж",
+        "width": 2560,
+        "height": 1707
       },
       {
         "src": "assets/venues/apartments/2.jpg",
-        "alt": "Спальня в апартаментах Марьяж",
-        "width": 920,
-        "height": 460
+        "alt": "Гостиная с диваном в апартаментах Марьяж",
+        "width": 1500,
+        "height": 1000
       },
       {
         "src": "assets/venues/apartments/3.jpg",
-        "alt": "Детали интерьера апартаментов Марьяж",
-        "width": 920,
-        "height": 460
+        "alt": "Ванная комната в апартаментах Марьяж",
+        "width": 2560,
+        "height": 1707
       }
     ],
     "menus": [],
@@ -300,8 +300,8 @@
       "label": "Забронировать номер",
       "type": "booking"
     },
-    "mainWidth": 920,
-    "mainHeight": 460
+    "mainWidth": 2560,
+    "mainHeight": 1707
   },
   {
     "slug": "viewpoint",
