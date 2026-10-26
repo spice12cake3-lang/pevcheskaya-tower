@@ -136,26 +136,32 @@
     ]
   },
   "assets/india.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 170792,
+    "width": 2560,
+    "height": 1707,
+    "originalBytes": 1113429,
     "variants": [
       {
-        "src": "assets/optimized/india-1cf0656af974-320.webp",
+        "src": "assets/optimized/india-2d84b68b8c1a-320.webp",
         "width": 320,
-        "bytes": 16256
+        "bytes": 120168
       },
       {
-        "src": "assets/optimized/india-1cf0656af974-640.webp",
+        "src": "assets/optimized/india-2d84b68b8c1a-640.webp",
         "width": 640,
-        "bytes": 54102
+        "bytes": 454314
       },
       {
-        "src": "assets/optimized/india-1cf0656af974-920.webp",
-        "width": 920,
-        "bytes": 100078
+        "src": "assets/optimized/india-2d84b68b8c1a-960.webp",
+        "width": 960,
+        "bytes": 957736
+      },
+      {
+        "src": "assets/optimized/india-2d84b68b8c1a-2560.jpg",
+        "width": 2560,
+        "bytes": 1113429
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/karaoke.jpg": {
     "width": 1280,
@@ -689,70 +695,60 @@
     ]
   },
   "assets/venues/india/1.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 153519,
+    "width": 2560,
+    "height": 1920,
+    "originalBytes": 1470743,
     "variants": [
       {
-        "src": "assets/optimized/1-9b1ca700de96-320.webp",
+        "src": "assets/optimized/1-77d388d51e54-320.webp",
         "width": 320,
-        "bytes": 14336
+        "bytes": 138892
       },
       {
-        "src": "assets/optimized/1-9b1ca700de96-640.webp",
+        "src": "assets/optimized/1-77d388d51e54-640.webp",
         "width": 640,
-        "bytes": 42414
+        "bytes": 513350
       },
       {
-        "src": "assets/optimized/1-9b1ca700de96-920.webp",
-        "width": 920,
-        "bytes": 73364
+        "src": "assets/optimized/1-77d388d51e54-960.webp",
+        "width": 960,
+        "bytes": 1081528
+      },
+      {
+        "src": "assets/optimized/1-77d388d51e54-2560.jpg",
+        "width": 2560,
+        "bytes": 1470743
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/india/2.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 227416,
+    "width": 2560,
+    "height": 1751,
+    "originalBytes": 1019315,
     "variants": [
       {
-        "src": "assets/optimized/2-836215bde55a-320.webp",
+        "src": "assets/optimized/2-422b5bf1154e-320.webp",
         "width": 320,
-        "bytes": 20662
+        "bytes": 126458
       },
       {
-        "src": "assets/optimized/2-836215bde55a-640.webp",
+        "src": "assets/optimized/2-422b5bf1154e-640.webp",
         "width": 640,
-        "bytes": 71296
+        "bytes": 455632
       },
       {
-        "src": "assets/optimized/2-836215bde55a-920.webp",
-        "width": 920,
-        "bytes": 127912
+        "src": "assets/optimized/2-422b5bf1154e-960.webp",
+        "width": 960,
+        "bytes": 935588
+      },
+      {
+        "src": "assets/optimized/2-422b5bf1154e-2560.jpg",
+        "width": 2560,
+        "bytes": 1019315
       }
-    ]
-  },
-  "assets/venues/india/3.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 192595,
-    "variants": [
-      {
-        "src": "assets/optimized/3-af6a458f26a4-320.webp",
-        "width": 320,
-        "bytes": 14910
-      },
-      {
-        "src": "assets/optimized/3-af6a458f26a4-640.webp",
-        "width": 640,
-        "bytes": 56008
-      },
-      {
-        "src": "assets/optimized/3-af6a458f26a4-920.webp",
-        "width": 920,
-        "bytes": 108426
-      }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/karaoke/1.jpg": {
     "width": 1280,

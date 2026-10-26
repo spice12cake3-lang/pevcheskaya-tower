@@ -12,9 +12,9 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 LOSSLESS_SOURCES = {
-    'assets/apartments.jpg', 'assets/sochi.jpg', 'assets/odessa.jpg', 'assets/karaoke.jpg',
+    'assets/apartments.jpg', 'assets/sochi.jpg', 'assets/odessa.jpg', 'assets/karaoke.jpg', 'assets/india.jpg',
     *(f'assets/venues/{venue}/{number}.jpg'
-      for venue in ('apartments', 'sochi', 'odessa', 'karaoke') for number in (1, 2, 3)),
+      for venue in ('apartments', 'sochi', 'odessa', 'karaoke', 'india') for number in (1, 2, 3)),
 }
 sources = '\n'.join(p.read_text() for p in (ROOT / 'src').iterdir()
                     if p.suffix in ('.html', '.json') and p.name != 'image-manifest.json')

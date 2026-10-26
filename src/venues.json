@@ -93,21 +93,15 @@
     "gallery": [
       {
         "src": "assets/venues/india/1.jpg",
-        "alt": "Уютная зона в ресторане Индия",
-        "width": 920,
-        "height": 460
+        "alt": "Общий вид зала Индия с банкетной сервировкой",
+        "width": 2560,
+        "height": 1920
       },
       {
         "src": "assets/venues/india/2.jpg",
-        "alt": "Сервировка стола в ресторане Индия",
-        "width": 920,
-        "height": 460
-      },
-      {
-        "src": "assets/venues/india/3.jpg",
-        "alt": "Интерьер ресторана Индия",
-        "width": 920,
-        "height": 460
+        "alt": "Сервировка длинного стола в ресторане Индия",
+        "width": 2560,
+        "height": 1751
       }
     ],
     "menus": [
@@ -117,8 +111,8 @@
         "title": "Меню — Индия"
       }
     ],
-    "mainWidth": 920,
-    "mainHeight": 460
+    "mainWidth": 2560,
+    "mainHeight": 1707
   },
   {
     "slug": "china",
