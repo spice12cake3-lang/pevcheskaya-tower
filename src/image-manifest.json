@@ -158,26 +158,22 @@
     ]
   },
   "assets/karaoke.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 205183,
+    "width": 1280,
+    "height": 853,
+    "originalBytes": 346688,
     "variants": [
       {
-        "src": "assets/optimized/karaoke-0557200b25d4-320.webp",
+        "src": "assets/optimized/karaoke-990dfa955fd6-320.webp",
         "width": 320,
-        "bytes": 17878
+        "bytes": 109070
       },
       {
-        "src": "assets/optimized/karaoke-0557200b25d4-640.webp",
-        "width": 640,
-        "bytes": 68500
-      },
-      {
-        "src": "assets/optimized/karaoke-0557200b25d4-920.webp",
-        "width": 920,
-        "bytes": 134652
+        "src": "assets/optimized/karaoke-990dfa955fd6-1280.jpg",
+        "width": 1280,
+        "bytes": 346688
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/kids.jpg": {
     "width": 920,
@@ -759,70 +755,40 @@
     ]
   },
   "assets/venues/karaoke/1.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 193626,
+    "width": 1280,
+    "height": 853,
+    "originalBytes": 223139,
     "variants": [
       {
-        "src": "assets/optimized/1-5e7036d6d5f6-320.webp",
+        "src": "assets/optimized/1-51ff15185bf8-320.webp",
         "width": 320,
-        "bytes": 8364
+        "bytes": 99700
       },
       {
-        "src": "assets/optimized/1-5e7036d6d5f6-640.webp",
-        "width": 640,
-        "bytes": 24716
-      },
-      {
-        "src": "assets/optimized/1-5e7036d6d5f6-920.webp",
-        "width": 920,
-        "bytes": 45250
+        "src": "assets/optimized/1-51ff15185bf8-1280.jpg",
+        "width": 1280,
+        "bytes": 223139
       }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/karaoke/2.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 85113,
+    "width": 1280,
+    "height": 853,
+    "originalBytes": 267277,
     "variants": [
       {
-        "src": "assets/optimized/2-b2b6cbaf24b1-320.webp",
+        "src": "assets/optimized/2-f9ee28b73dca-320.webp",
         "width": 320,
-        "bytes": 8190
+        "bytes": 100514
       },
       {
-        "src": "assets/optimized/2-b2b6cbaf24b1-640.webp",
-        "width": 640,
-        "bytes": 22506
-      },
-      {
-        "src": "assets/optimized/2-b2b6cbaf24b1-920.webp",
-        "width": 920,
-        "bytes": 37882
+        "src": "assets/optimized/2-f9ee28b73dca-1280.jpg",
+        "width": 1280,
+        "bytes": 267277
       }
-    ]
-  },
-  "assets/venues/karaoke/3.jpg": {
-    "width": 920,
-    "height": 460,
-    "originalBytes": 178644,
-    "variants": [
-      {
-        "src": "assets/optimized/3-3bf93c34a60c-320.webp",
-        "width": 320,
-        "bytes": 17796
-      },
-      {
-        "src": "assets/optimized/3-3bf93c34a60c-640.webp",
-        "width": 640,
-        "bytes": 67612
-      },
-      {
-        "src": "assets/optimized/3-3bf93c34a60c-920.webp",
-        "width": 920,
-        "bytes": 126376
-      }
-    ]
+    ],
+    "compression": "lossless"
   },
   "assets/venues/kids/1.jpg": {
     "width": 920,

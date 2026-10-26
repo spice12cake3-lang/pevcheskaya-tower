@@ -241,21 +241,15 @@
     "gallery": [
       {
         "src": "assets/venues/karaoke/1.jpg",
-        "alt": "Зона для компании в караоке-баре",
-        "width": 920,
-        "height": 460
+        "alt": "Интерьер караоке-бара с подсветкой",
+        "width": 1280,
+        "height": 853
       },
       {
         "src": "assets/venues/karaoke/2.jpg",
-        "alt": "Микрофон в караоке-баре",
-        "width": 920,
-        "height": 460
-      },
-      {
-        "src": "assets/venues/karaoke/3.jpg",
-        "alt": "Музыкальные детали интерьера караоке-бара",
-        "width": 920,
-        "height": 460
+        "alt": "Виниловые пластинки и музыкальные детали караоке-бара",
+        "width": 1280,
+        "height": 853
       }
     ],
     "menus": [
@@ -265,8 +259,8 @@
         "title": "Основное меню"
       }
     ],
-    "mainWidth": 920,
-    "mainHeight": 460
+    "mainWidth": 1280,
+    "mainHeight": 853
   },
   {
     "slug": "apartments",
