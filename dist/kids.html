@@ -29,6 +29,7 @@
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .pb,.pb *{box-sizing:border-box}
+.pb{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 .pb{--pb-blue:#065781;--pb-gold:#e1ab33;--pb-bg:#f7f2e9;--pb-white:#fffdf5;--pb-ink:#414141;--t-headline-font:PBDisplay,"Arial Narrow",sans-serif;--t-text-font:PBInter,Arial,sans-serif;--pb-button-width:200px;--pb-button-height:52px;--pb-layout-width:1520px;--pb-gutter:24px;--pb-panel-padding:24px;--pb-opening-inset:12px;--pb-opening-gap:12px;--pb-intro-inset:30px;width:100%;min-width:0;margin:0;padding-bottom:16px;background:var(--pb-bg);color:var(--pb-ink);font:400 14px/1.45 var(--t-text-font);-webkit-font-smoothing:antialiased}
 .pb h1,.pb h2,.pb h3,.pb p{margin:0}
 .pb h1,.pb h2,.pb h3{font-family:var(--t-headline-font);font-weight:400;color:var(--pb-blue)}
@@ -37,7 +38,8 @@ html{scroll-behavior:smooth}
 .pb button,.pb input,.pb select,.pb textarea{font:inherit}
 .pb button{color:inherit;cursor:pointer}
 .pb button,.pb input,.pb select{border:0}
-.pb button:focus-visible,.pb a:focus-visible,.pb input:focus-visible,.pb select:focus-visible{outline:3px solid var(--pb-gold);outline-offset:4px}
+.pb button:focus-visible,.pb a:focus-visible,.pb input:focus-visible,.pb select:focus-visible{outline:2px solid var(--pb-blue);outline-offset:3px}
+.pb[data-pb-input="pointer"] :focus{outline:none}
 .pb img{display:block;max-width:100%}
 .pb [hidden]{display:none!important}
 .pb .pb__inset,.pb .pb__content{width:calc(100% - 2 * var(--pb-gutter));max-width:var(--pb-layout-width);margin-left:auto;margin-right:auto}
@@ -159,7 +161,7 @@ html{scroll-behavior:smooth}
 .pb .pb__form-field>input,.pb .pb__form-field>textarea{display:block;width:100%;min-width:0;height:52px;padding:12px 14px;border:1px solid #ded7ca;border-radius:8px;background:var(--pb-white);color:var(--pb-ink);font:400 16px/1.4 var(--t-text-font)}
 .pb .pb__form-field>input::placeholder,.pb .pb__form-field>textarea::placeholder{color:#79746c;opacity:1}
 .pb .pb__form-field>textarea{height:120px;min-height:100px;max-height:360px;resize:vertical}
-.pb .pb__form-field>textarea:focus-visible{outline:3px solid var(--pb-gold);outline-offset:4px}
+.pb .pb__form-field>textarea:focus-visible{outline:2px solid var(--pb-blue);outline-offset:3px}
 .pb .pb__consent{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:start;gap:12px;min-width:0;font:400 14px/1.45 var(--t-text-font);cursor:pointer}
 .pb .pb__consent>input{appearance:auto;-webkit-appearance:checkbox;accent-color:var(--pb-ink);width:22px;height:22px;margin:0;border:1px solid #a59f94;border-radius:4px;cursor:pointer}
 .pb .pb__policy-link{display:inline;padding:0;border:0;background:transparent;color:inherit;font:inherit;text-align:left;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -263,7 +265,8 @@ html{scroll-behavior:smooth}
  .pb .pb__navigation-panel{padding:24px}
  .pb .pb__navigation-header>img{width:88px;height:70px}
  .pb .pb__brand img{width:75px;height:60px}
- .pb .pb__intro h1,.pb .pb__careers-intro h1{font-size:var(--pb-mobile-h1);letter-spacing:-.3px;margin-bottom:16px}
+ .pb .pb__intro h1,.pb .pb__careers-intro h1,.pb .pb__restaurant-heading h1{font-size:var(--pb-mobile-h1);line-height:1.05;letter-spacing:-.3px}
+ .pb .pb__intro h1,.pb .pb__careers-intro h1{margin-bottom:16px}
  .pb .pb__intro p{font-size:14px;line-height:1.45}
  .pb .pb__hero-photo{aspect-ratio:auto;min-height:340px}
  .pb .pb__hero-photo>img{position:absolute;inset:0;height:100%}
@@ -291,7 +294,7 @@ html{scroll-behavior:smooth}
  .pb .pb__event-copy>p{margin:18px 0 28px}
  .pb .pb__event-offer h3{font-size:var(--pb-mobile-h3)}
  .pb .pb__event-copy>.pb__button{margin-top:28px}
- .pb .pb__contact{padding:20px;gap:28px}
+ .pb .pb__contact{width:calc(100% - 2 * var(--pb-opening-inset));padding:20px;gap:28px}
  .pb .pb__contact h2{font-size:var(--pb-mobile-h2);line-height:1.15}
  .pb .pb__contact-copy>p{font-size:14px;margin-top:18px}
  .pb .pb__contact-direct{margin-top:28px}
@@ -418,6 +421,7 @@ html{scroll-behavior:smooth}
 .pb .pb__heading-pending.pb__heading-enter{opacity:1;transform:none;transition:opacity 1.2s cubic-bezier(.25,.46,.45,.94),transform 1.2s cubic-bezier(.25,.46,.45,.94)}
 @media(prefers-reduced-motion:reduce){.pb .pb__heading-pending,.pb .pb__heading-pending.pb__heading-enter{opacity:1;transform:none;transition:none}}
 
+.pb .pb__mobile-break{display:none}
 /* Event request: one centred form for the banquet and event-section buttons. */
 .pb .pb__banquet{position:fixed;inset:0;width:min(560px,calc(100% - 40px));max-width:none;max-height:calc(100dvh - 96px);margin:auto;padding:32px;border:0;border-radius:20px;background:var(--pb-white);color:var(--pb-ink);font-family:var(--t-text-font);overflow:auto;overscroll-behavior:contain}
 .pb .pb__banquet::backdrop{background:#000a;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
@@ -431,8 +435,9 @@ html{scroll-behavior:smooth}
 .pb .pb__banquet-close svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
 @media(max-width:639.98px){
  .pb .pb__banquet{width:calc(100% - 24px);max-height:calc(100dvh - 96px);padding:24px 20px;border-radius:16px}
- .pb .pb__banquet h2{font-size:var(--pb-mobile-h2)}
- .pb .pb__banquet-description{font-size:14px;margin:12px 0 24px}
+ .pb .pb__banquet h2{font-size:clamp(22px,6.4vw,28px);white-space:nowrap;letter-spacing:0}
+ .pb .pb__banquet-description{font-size:13px;line-height:1.45;margin:12px 0 24px}
+ .pb .pb__banquet-description .pb__mobile-break{display:block}
  .pb .pb__banquet-close{top:12px;right:12px}
 }
 
@@ -480,6 +485,7 @@ html{scroll-behavior:smooth}
 
 .pb.pb--restaurant>.pb__contacts{width:calc(100% + 2 * var(--pb-opening-inset));margin-left:calc(-1 * var(--pb-opening-inset));margin-right:calc(-1 * var(--pb-opening-inset))}
 .pb.pb--restaurant>.pb__contact{width:calc(100% - 2 * (var(--pb-gutter) - var(--pb-opening-inset)));margin-left:auto;margin-right:auto}
+@media(max-width:639.98px){.pb.pb--restaurant>.pb__contact{width:100%}}
 
 @media(min-width:900px){.pb .pb__desktop-title-line{display:block;white-space:nowrap}}
 @media(min-width:900px) and (max-width:1199px){.pb .pb__restaurant-heading:has(.pb__desktop-title-line) h1{font-size:56px}}
@@ -562,11 +568,11 @@ html{scroll-behavior:smooth}
   <dialog class="pb__banquet" id="pb-banquet" aria-labelledby="pb-banquet-title" aria-describedby="pb-banquet-description">
   <button class="pb__banquet-close" type="button" aria-label="Закрыть форму мероприятия"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button>
   <h2 id="pb-banquet-title" tabindex="-1" autofocus>Забронировать мероприятие</h2>
-  <p class="pb__banquet-description" id="pb-banquet-description">Оставьте свои контакты, и мы свяжемся с вами, чтобы обсудить детали вашего мероприятия.</p>
+  <p class="pb__banquet-description" id="pb-banquet-description">Оставьте контакты — мы обсудим<span class="pb__mobile-break"></span> детали вашего мероприятия.</p>
   <form class="pb__form pb__banquet-form t-form-off" id="pb-banquet-form" data-feedback-form>
     <div class="pb__form-fields">
       <label class="pb__form-field" for="pb-banquet-name"><span class="pb__sr-only">Ваше имя</span><input id="pb-banquet-name" name="name" placeholder="Ваше имя *" autocomplete="given-name" required maxlength="80"></label>
-      <label class="pb__form-field" for="pb-banquet-phone"><span class="pb__sr-only">Номер телефона</span><input id="pb-banquet-phone" name="phone" type="tel" placeholder="Номер телефона *" autocomplete="tel" required maxlength="40"></label>
+      <label class="pb__form-field" for="pb-banquet-phone"><span class="pb__sr-only">Номер телефона</span><input id="pb-banquet-phone" name="phone" type="tel" placeholder="+7 (000) 000-00-00" inputmode="tel" autocomplete="tel" required maxlength="40"></label>
       <label class="pb__form-field" for="pb-banquet-interest"><span class="pb__sr-only">Расскажите о вашем мероприятии (необязательно)</span><textarea id="pb-banquet-interest" name="interest" rows="4" placeholder="Расскажите о вашем мероприятии (необязательно)" maxlength="3000"></textarea></label>
     </div>
     <label class="pb__consent" for="pb-banquet-consent"><input id="pb-banquet-consent" name="consent" type="checkbox" required><span>Соглашаюсь с <button class="pb__policy-link" type="button">политикой конфиденциальности</button> и даю <button class="pb__policy-link" type="button">согласие на обработку персональных данных.</button></span></label>
@@ -707,6 +713,13 @@ html{scroll-behavior:smooth}
 
 (function () {
   'use strict';
+  var root = document.getElementById('pb-site');
+  if (!root) return;
+  root.dataset.pbInput = 'pointer';
+  document.addEventListener('pointerdown', function () { root.dataset.pbInput = 'pointer'; }, true);
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Tab' || event.key.indexOf('Arrow') === 0) root.dataset.pbInput = 'keyboard';
+  }, true);
   document.querySelectorAll('#pb-site [data-feedback-form]').forEach(function (form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();

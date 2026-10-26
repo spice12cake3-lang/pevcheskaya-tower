@@ -1,11 +1,11 @@
 <dialog class="pb__banquet" id="pb-banquet" aria-labelledby="pb-banquet-title" aria-describedby="pb-banquet-description">
   <button class="pb__banquet-close" type="button" aria-label="Закрыть форму мероприятия"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button>
   <h2 id="pb-banquet-title" tabindex="-1" autofocus>Забронировать мероприятие</h2>
-  <p class="pb__banquet-description" id="pb-banquet-description">Оставьте свои контакты, и мы свяжемся с вами, чтобы обсудить детали вашего мероприятия.</p>
+  <p class="pb__banquet-description" id="pb-banquet-description">Оставьте контакты — мы обсудим<span class="pb__mobile-break"></span> детали вашего мероприятия.</p>
   <form class="pb__form pb__banquet-form t-form-off" id="pb-banquet-form" data-feedback-form>
     <div class="pb__form-fields">
       <label class="pb__form-field" for="pb-banquet-name"><span class="pb__sr-only">Ваше имя</span><input id="pb-banquet-name" name="name" placeholder="Ваше имя *" autocomplete="given-name" required maxlength="80"></label>
-      <label class="pb__form-field" for="pb-banquet-phone"><span class="pb__sr-only">Номер телефона</span><input id="pb-banquet-phone" name="phone" type="tel" placeholder="Номер телефона *" autocomplete="tel" required maxlength="40"></label>
+      <label class="pb__form-field" for="pb-banquet-phone"><span class="pb__sr-only">Номер телефона</span><input id="pb-banquet-phone" name="phone" type="tel" placeholder="+7 (000) 000-00-00" inputmode="tel" autocomplete="tel" required maxlength="40"></label>
       <label class="pb__form-field" for="pb-banquet-interest"><span class="pb__sr-only">Расскажите о вашем мероприятии (необязательно)</span><textarea id="pb-banquet-interest" name="interest" rows="4" placeholder="Расскажите о вашем мероприятии (необязательно)" maxlength="3000"></textarea></label>
     </div>
     <label class="pb__consent" for="pb-banquet-consent"><input id="pb-banquet-consent" name="consent" type="checkbox" required><span>Соглашаюсь с <button class="pb__policy-link" type="button">политикой конфиденциальности</button> и даю <button class="pb__policy-link" type="button">согласие на обработку персональных данных.</button></span></label>
