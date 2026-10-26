@@ -277,6 +277,9 @@ html{scroll-behavior:smooth}
  .pb .pb__form{padding:20px;gap:20px;border-radius:16px}
  .pb .pb__form h3{font-size:var(--pb-mobile-h3);line-height:1.2}
  .pb .pb__form-fields{grid-template-columns:minmax(0,1fr)}
+ .pb .pb__form-field>input,.pb .pb__form-field>textarea{font-size:14px}
+ .pb .pb__form .pb__consent{font-size:12px}
+ .pb .pb__form>.pb__button{font-size:18px}
  .pb .pb__contact-details{display:block}
  .pb .pb__footer-art{width:min(100%,320px);height:auto;aspect-ratio:1353/1691;margin:24px auto}
  .pb .pb__map{min-height:320px}
