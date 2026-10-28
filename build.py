@@ -82,6 +82,7 @@ js += '\n' + form_js
 heading_js = (ROOT / 'src/heading-motion.js').read_text()
 js += '\n' + heading_js
 pdf_js = (ROOT / 'src/pdf-viewer.js').read_text()
+pdf_js = pdf_js.replace('/* MENU_PREVIEWS */ {}', (ROOT / 'src/menu-previews.json').read_text().strip())
 js += '\n' + pdf_js
 fragment = f'<style>\n{css}\n</style>\n{page}\n<script>\n{js}\n</script>\n'
 (ROOT / 'tilda-t123.html').write_text(fragment)

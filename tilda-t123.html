@@ -918,6 +918,7 @@ html{scroll-behavior:smooth}
   var assetsBase = new URL('.', root.querySelector('.pb__navigation-header img').src);
   var lightbox = menuDialog.classList.contains('pb__pdf--lightbox');
   var previousOverflow;
+  var scrollLocked = false;
   var pdfLibraryBase = new URL('pdfjs/', assetsBase);
   var pdfDocument;
   var pdfPromise;
@@ -929,6 +930,60 @@ html{scroll-behavior:smooth}
   var activeRender;
   var menuOpener;
   var defaultTitle = menuDialog.querySelector('#pb-menu-title').textContent;
+  var menuPreviews = {"assets/menu.pdf":[{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/01-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/01-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/02-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/02-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/03-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/03-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/04-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/04-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/05-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/05-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/06-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/06-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/07-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/07-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/08-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/08-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/09-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/09-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/10-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/10-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/11-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/11-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/12-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/12-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/13-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/13-1920.webp","width":1920}]},{"width":663.3070068359375,"height":620.7869873046875,"variants":[{"src":"assets/menu-pages/restaurant-ce11c59ca4/14-960.webp","width":960},{"src":"assets/menu-pages/restaurant-ce11c59ca4/14-1920.webp","width":1920}]}],"assets/menus/wine.pdf":[{"width":453.5436096191406,"height":1213.227783203125,"variants":[{"src":"assets/menu-pages/wine-cd53c15a6b/01-960.webp","width":960},{"src":"assets/menu-pages/wine-cd53c15a6b/01-1920.webp","width":1920}]},{"width":453.5429992675781,"height":1213.227783203125,"variants":[{"src":"assets/menu-pages/wine-cd53c15a6b/02-960.webp","width":961},{"src":"assets/menu-pages/wine-cd53c15a6b/02-1920.webp","width":1921}]},{"width":453.5436096191406,"height":1213.227783203125,"variants":[{"src":"assets/menu-pages/wine-cd53c15a6b/03-960.webp","width":960},{"src":"assets/menu-pages/wine-cd53c15a6b/03-1920.webp","width":1920}]},{"width":453.5429992675781,"height":1213.227783203125,"variants":[{"src":"assets/menu-pages/wine-cd53c15a6b/04-960.webp","width":961},{"src":"assets/menu-pages/wine-cd53c15a6b/04-1920.webp","width":1921}]}],"assets/menus/india.pdf":[{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/01-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/01-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/02-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/02-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/03-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/03-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/04-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/04-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/05-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/05-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/06-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/06-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/07-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/07-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/08-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/08-1920.webp","width":1920}]},{"width":606.6141967773438,"height":853.2283935546875,"variants":[{"src":"assets/menu-pages/india-ecee5e60c5/09-960.webp","width":960},{"src":"assets/menu-pages/india-ecee5e60c5/09-1920.webp","width":1920}]}],"assets/menus/china.pdf":[{"width":1201.9300537109375,"height":853.3300170898438,"variants":[{"src":"assets/menu-pages/china-7c2605d16a/01-960.webp","width":960},{"src":"assets/menu-pages/china-7c2605d16a/01-1920.webp","width":1920}]},{"width":1201.8199462890625,"height":853.3699951171875,"variants":[{"src":"assets/menu-pages/china-7c2605d16a/02-960.webp","width":961},{"src":"assets/menu-pages/china-7c2605d16a/02-1920.webp","width":1921}]},{"width":1201.9300537109375,"height":853.3300170898438,"variants":[{"src":"assets/menu-pages/china-7c2605d16a/03-960.webp","width":960},{"src":"assets/menu-pages/china-7c2605d16a/03-1920.webp","width":1920}]},{"width":1202.2099609375,"height":853.3699951171875,"variants":[{"src":"assets/menu-pages/china-7c2605d16a/04-960.webp","width":960},{"src":"assets/menu-pages/china-7c2605d16a/04-1920.webp","width":1920}]}],"assets/menus/kids.pdf":[{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/01-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/01-1920.webp","width":1920}]},{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/02-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/02-1920.webp","width":1920}]},{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/03-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/03-1920.webp","width":1920}]},{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/04-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/04-1920.webp","width":1920}]},{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/05-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/05-1920.webp","width":1920}]},{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/06-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/06-1920.webp","width":1920}]},{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/07-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/07-1920.webp","width":1920}]},{"width":595.2760009765625,"height":841.8900146484375,"variants":[{"src":"assets/menu-pages/kids-27e7d5e26a/08-960.webp","width":960},{"src":"assets/menu-pages/kids-27e7d5e26a/08-1920.webp","width":1920}]}]};
+  var previewImages = new Map();
+
+  function previewsFor(source) {
+    var key = Object.keys(menuPreviews).find(function (path) { return new URL(path, document.baseURI).href === source; });
+    return key ? menuPreviews[key] : null;
+  }
+
+  function previewVariant(page, width) {
+    return page.variants.find(function (variant) { return variant.width >= width; }) || page.variants[page.variants.length - 1];
+  }
+
+  function loadPreview(variant, priority) {
+    var url = new URL(variant.src, document.baseURI).href;
+    if (previewImages.has(url)) return previewImages.get(url);
+    var promise = new Promise(function (resolve, reject) {
+      var image = new Image();
+      image.decoding = 'async';
+      image.fetchPriority = priority || 'high';
+      image.onload = function () { image.decode().then(function () { resolve(image); }, reject); };
+      image.onerror = function () { reject(new Error('Menu page could not be loaded')); };
+      image.src = url;
+    }).catch(function (error) { previewImages.delete(url); throw error; });
+    previewImages.set(url, promise);
+    // Keep nearby pages ready without retaining every decoded menu on a phone.
+    if (previewImages.size > 6) previewImages.delete(previewImages.keys().next().value);
+    return promise;
+  }
+
+  function previewDocument(pages) {
+    return {
+      numPages: pages.length,
+      getPage: function (number) {
+        var asset = pages[number - 1];
+        return Promise.resolve({
+          getViewport: function (options) { return {width: asset.width * options.scale, height: asset.height * options.scale}; },
+          render: function (options) {
+            var cancelled = false;
+            var rejectCancellation;
+            var cancellation = new Promise(function (resolve, reject) { rejectCancellation = reject; });
+            var width = options.viewport.width * options.transform[0];
+            var drawing = loadPreview(previewVariant(asset, width)).then(function (image) {
+              if (cancelled) throw {name: 'RenderingCancelledException'};
+              var context = options.canvasContext;
+              context.setTransform.apply(context, options.transform);
+              context.drawImage(image, 0, 0, options.viewport.width, options.viewport.height);
+              if (pages[number]) loadPreview(previewVariant(pages[number], width), 'low').catch(function () {});
+            });
+            return {promise: Promise.race([drawing, cancellation]), cancel: function () { cancelled = true; rejectCancellation({name: 'RenderingCancelledException'}); }};
+          }
+        });
+      }
+    };
+  }
 
   function updatePdfControls() {
     previousPage.disabled = !pdfDocument || pdfPageNumber <= 1;
@@ -998,7 +1053,8 @@ html{scroll-behavior:smooth}
     }
     try {
       if (!pdfPromise) {
-        pdfPromise = import(new URL('pdf.mjs', pdfLibraryBase).href).then(function (pdfjs) {
+        var previews = previewsFor(source);
+        pdfPromise = previews ? Promise.resolve(previewDocument(previews)) : import(new URL('pdf.mjs', pdfLibraryBase).href).then(function (pdfjs) {
           pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdf.worker.mjs', pdfLibraryBase).href;
           return pdfjs.getDocument({url: source, cMapUrl: new URL('cmaps/', pdfLibraryBase).href, cMapPacked: true, standardFontDataUrl: new URL('standard_fonts/', pdfLibraryBase).href, wasmUrl: new URL('wasm/', pdfLibraryBase).href}).promise;
         }).catch(function (error) { if (loadedPdfSource === source) pdfPromise = null; throw error; });
@@ -1016,13 +1072,23 @@ html{scroll-behavior:smooth}
   }
 
   root.querySelectorAll('[data-pdf-source]').forEach(function (link) {
+    function prepareFirstPage() {
+      var pages = previewsFor(new URL(link.dataset.pdfSource, document.baseURI).href);
+      if (pages) loadPreview(pages[0].variants[0], 'low').catch(function () {});
+    }
+    link.addEventListener('pointerenter', prepareFirstPage, {passive: true});
+    link.addEventListener('focus', prepareFirstPage);
+    link.addEventListener('touchstart', prepareFirstPage, {passive: true});
     link.addEventListener('click', function (event) {
       event.preventDefault();
       pdfSource = new URL(link.dataset.pdfSource, document.baseURI).href;
       menuDialog.querySelector('#pb-menu-title').textContent = link.dataset.pdfTitle || defaultTitle;
       function showMenu() {
-        previousOverflow = document.documentElement.style.overflow;
-        document.documentElement.style.overflow = 'hidden';
+        if (!scrollLocked) {
+          previousOverflow = document.documentElement.style.overflow;
+          document.documentElement.style.overflow = 'hidden';
+          scrollLocked = true;
+        }
         menuDialog.showModal();
         menuDialog.querySelector('.pb__pdf-close').focus({preventScroll: true});
         openPdf();
@@ -1040,7 +1106,10 @@ html{scroll-behavior:smooth}
   });
   menuDialog.querySelector('.pb__pdf-close').addEventListener('click', function () { menuDialog.close(); });
   menuDialog.addEventListener('close', function () {
+    // A queued close from the previous menu must not cancel a newly opened one.
+    if (menuDialog.open || !scrollLocked) return;
     document.documentElement.style.overflow = previousOverflow;
+    scrollLocked = false;
     ++renderGeneration;
     if (activeRender) activeRender.cancel();
     if (menuOpener) menuOpener.focus({preventScroll: true});

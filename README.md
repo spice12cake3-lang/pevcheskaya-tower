@@ -24,6 +24,7 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
 - `src/` — шаблоны, стили, скрипты и данные.
 - `dist/` — готовый сайт и его изображения, шрифты, PDF.
 - `src/prepare_images.py` — подготовка WebP-вариантов при замене фотографий (требуется Pillow); результат фиксируется в `src/image-manifest.json` и `dist/assets/optimized/`. Обычная сборка не требует Pillow.
+- `src/prepare-menu-previews.py` — подготовка постраничных WebP-версий меню (требуются Pillow и pypdfium2). После замены PDF запустить скрипт и `build.py`. Просмотрщик загружает текущую страницу и заранее готовит следующую; исходные PDF сохраняются. Данные страниц находятся в `src/menu-previews.json`, изображения — в `dist/assets/menu-pages/`. Обычная сборка не требует дополнительных пакетов.
 - `build.py` — сборка всех страниц.
 - `tilda-t123.html` — дополнительный HTML-фрагмент главной страницы.
 - `.github/workflows/deploy.yml` — сборка и публикация в GitHub Pages при изменениях в `main`.

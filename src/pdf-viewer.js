@@ -16,6 +16,7 @@
   var assetsBase = new URL('.', root.querySelector('.pb__navigation-header img').src);
   var lightbox = menuDialog.classList.contains('pb__pdf--lightbox');
   var previousOverflow;
+  var scrollLocked = false;
   var pdfLibraryBase = new URL('pdfjs/', assetsBase);
   var pdfDocument;
   var pdfPromise;
@@ -27,6 +28,60 @@
   var activeRender;
   var menuOpener;
   var defaultTitle = menuDialog.querySelector('#pb-menu-title').textContent;
+  var menuPreviews = /* MENU_PREVIEWS */ {};
+  var previewImages = new Map();
+
+  function previewsFor(source) {
+    var key = Object.keys(menuPreviews).find(function (path) { return new URL(path, document.baseURI).href === source; });
+    return key ? menuPreviews[key] : null;
+  }
+
+  function previewVariant(page, width) {
+    return page.variants.find(function (variant) { return variant.width >= width; }) || page.variants[page.variants.length - 1];
+  }
+
+  function loadPreview(variant, priority) {
+    var url = new URL(variant.src, document.baseURI).href;
+    if (previewImages.has(url)) return previewImages.get(url);
+    var promise = new Promise(function (resolve, reject) {
+      var image = new Image();
+      image.decoding = 'async';
+      image.fetchPriority = priority || 'high';
+      image.onload = function () { image.decode().then(function () { resolve(image); }, reject); };
+      image.onerror = function () { reject(new Error('Menu page could not be loaded')); };
+      image.src = url;
+    }).catch(function (error) { previewImages.delete(url); throw error; });
+    previewImages.set(url, promise);
+    // Keep nearby pages ready without retaining every decoded menu on a phone.
+    if (previewImages.size > 6) previewImages.delete(previewImages.keys().next().value);
+    return promise;
+  }
+
+  function previewDocument(pages) {
+    return {
+      numPages: pages.length,
+      getPage: function (number) {
+        var asset = pages[number - 1];
+        return Promise.resolve({
+          getViewport: function (options) { return {width: asset.width * options.scale, height: asset.height * options.scale}; },
+          render: function (options) {
+            var cancelled = false;
+            var rejectCancellation;
+            var cancellation = new Promise(function (resolve, reject) { rejectCancellation = reject; });
+            var width = options.viewport.width * options.transform[0];
+            var drawing = loadPreview(previewVariant(asset, width)).then(function (image) {
+              if (cancelled) throw {name: 'RenderingCancelledException'};
+              var context = options.canvasContext;
+              context.setTransform.apply(context, options.transform);
+              context.drawImage(image, 0, 0, options.viewport.width, options.viewport.height);
+              if (pages[number]) loadPreview(previewVariant(pages[number], width), 'low').catch(function () {});
+            });
+            return {promise: Promise.race([drawing, cancellation]), cancel: function () { cancelled = true; rejectCancellation({name: 'RenderingCancelledException'}); }};
+          }
+        });
+      }
+    };
+  }
 
   function updatePdfControls() {
     previousPage.disabled = !pdfDocument || pdfPageNumber <= 1;
@@ -96,7 +151,8 @@
     }
     try {
       if (!pdfPromise) {
-        pdfPromise = import(new URL('pdf.mjs', pdfLibraryBase).href).then(function (pdfjs) {
+        var previews = previewsFor(source);
+        pdfPromise = previews ? Promise.resolve(previewDocument(previews)) : import(new URL('pdf.mjs', pdfLibraryBase).href).then(function (pdfjs) {
           pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdf.worker.mjs', pdfLibraryBase).href;
           return pdfjs.getDocument({url: source, cMapUrl: new URL('cmaps/', pdfLibraryBase).href, cMapPacked: true, standardFontDataUrl: new URL('standard_fonts/', pdfLibraryBase).href, wasmUrl: new URL('wasm/', pdfLibraryBase).href}).promise;
         }).catch(function (error) { if (loadedPdfSource === source) pdfPromise = null; throw error; });
@@ -114,13 +170,23 @@
   }
 
   root.querySelectorAll('[data-pdf-source]').forEach(function (link) {
+    function prepareFirstPage() {
+      var pages = previewsFor(new URL(link.dataset.pdfSource, document.baseURI).href);
+      if (pages) loadPreview(pages[0].variants[0], 'low').catch(function () {});
+    }
+    link.addEventListener('pointerenter', prepareFirstPage, {passive: true});
+    link.addEventListener('focus', prepareFirstPage);
+    link.addEventListener('touchstart', prepareFirstPage, {passive: true});
     link.addEventListener('click', function (event) {
       event.preventDefault();
       pdfSource = new URL(link.dataset.pdfSource, document.baseURI).href;
       menuDialog.querySelector('#pb-menu-title').textContent = link.dataset.pdfTitle || defaultTitle;
       function showMenu() {
-        previousOverflow = document.documentElement.style.overflow;
-        document.documentElement.style.overflow = 'hidden';
+        if (!scrollLocked) {
+          previousOverflow = document.documentElement.style.overflow;
+          document.documentElement.style.overflow = 'hidden';
+          scrollLocked = true;
+        }
         menuDialog.showModal();
         menuDialog.querySelector('.pb__pdf-close').focus({preventScroll: true});
         openPdf();
@@ -138,7 +204,10 @@
   });
   menuDialog.querySelector('.pb__pdf-close').addEventListener('click', function () { menuDialog.close(); });
   menuDialog.addEventListener('close', function () {
+    // A queued close from the previous menu must not cancel a newly opened one.
+    if (menuDialog.open || !scrollLocked) return;
     document.documentElement.style.overflow = previousOverflow;
+    scrollLocked = false;
     ++renderGeneration;
     if (activeRender) activeRender.cancel();
     if (menuOpener) menuOpener.focus({preventScroll: true});
