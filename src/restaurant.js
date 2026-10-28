@@ -7,7 +7,7 @@
   var opener;
   var previousOverflow;
   function placeNavigation() {
-    var bounds = root.querySelector('.pb__restaurant-intro, .pb__careers-header').getBoundingClientRect();
+    var bounds = root.querySelector('.pb__restaurant-intro, .pb__careers-header, .pb__menu-page-header').getBoundingClientRect();
     var mobile = window.matchMedia('(max-width:639px)').matches;
     var fromHeader = opener && opener.closest('.pb__header');
     var top = mobile ? 12 : fromHeader ? 0 : Math.max(0, bounds.top);
@@ -39,10 +39,10 @@
     link.addEventListener('click', function () { navigation.close(); });
   });
   var floatingHeader = root.querySelector('.pb__header');
-  var firstSection = root.querySelector('.pb__restaurant, .pb__careers');
+  var firstSection = root.querySelector('.pb__restaurant, .pb__careers, .pb__menus');
   var initialMenu = root.querySelector('.pb__intro-header [data-nav-open]');
   function updateFloatingHeader() {
-    var visibleFromStart = root.classList.contains('pb--careers') && window.matchMedia('(min-width:1200px)').matches;
+    var visibleFromStart = (root.classList.contains('pb--careers') || root.classList.contains('pb--menus')) && window.matchMedia('(min-width:1200px)').matches;
     var trigger = window.matchMedia('(max-width:639.98px)').matches && initialMenu ? initialMenu : firstSection;
     floatingHeader.hidden = !visibleFromStart && trigger.getBoundingClientRect().bottom > 0;
   }

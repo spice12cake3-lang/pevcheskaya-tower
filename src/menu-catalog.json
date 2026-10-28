@@ -1,0 +1,7 @@
+[
+  {"title": "Меню ресторана", "source": "assets/menu.pdf", "featured": true},
+  {"title": "Винная карта", "source": "assets/menus/wine.pdf", "action": "Смотреть карту"},
+  {"title": "Индийское меню", "source": "assets/menus/india.pdf"},
+  {"title": "Китайское меню", "source": "assets/menus/china.pdf"},
+  {"title": "Детское меню", "source": "assets/menus/kids.pdf"}
+]

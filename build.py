@@ -99,7 +99,7 @@ contacts = contacts.replace('<section ', '<footer ', 1).replace('</section>', '<
 route = page[page.index('  <dialog class="pb__route'):page.index('  <dialog class="pb__navigation')]
 venue_css = css + '\n' + (ROOT / 'src/restaurant.css').read_text()
 venue_js = '\n'.join([(ROOT / 'src/restaurant.js').read_text(), (ROOT / 'src/banquet.js').read_text(), form_js, heading_js, pdf_js])
-internal_header = shared_header.replace('href="#pb-spaces"', 'href="./#pb-spaces"').replace('href="#pb-agenda"', 'href="./#pb-agenda"')
+internal_header = shared_header.replace('href="#pb-spaces"', 'href="./#pb-spaces"').replace('href="#pb-agenda"', 'href="./#pb-agenda"').replace('href="#pb-events"', 'href="./#pb-events"')
 
 travel_agents = json.loads((ROOT / 'src/travel-agents.json').read_text())
 for venue in venues + [travel_agents]:
@@ -112,9 +112,8 @@ for venue in venues + [travel_agents]:
     if not venue.get('showLocation', True):
         location = ''
     actions = []
-    for index, menu in enumerate(venue['menus']):
-        light = ' pb__button--light' if index else ''
-        actions.append(f'<a class="pb__button{light}" href="#pb-menu" data-pdf-source="{escape(menu["source"])}" data-pdf-title="{escape(menu["title"])}" aria-haspopup="dialog" aria-controls="pb-menu">{escape(menu["label"])}</a>')
+    if venue['menus']:
+        actions.append('<a class="pb__button" href="menu.html">Меню</a>')
     if 'action' in venue:
         action = venue['action']
         if action.get('type') == 'booking':
@@ -177,7 +176,39 @@ career_js = venue_js
 (ROOT / 'dist/vacancies.html').write_text('''<!DOCTYPE html>
 <html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Карьера — Певческая башня</title><meta name="description" content="Карьера в Певческой башне. Оставьте заявку: желаемая должность, опыт работы, ФИО и телефон."><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#065781"><link rel="icon" href="assets/logo.png"><link rel="preload" href="assets/fonts/bebas-neue-cyrillic.ttf" as="font" type="font/ttf" crossorigin><style>body{margin:0;background:#f7f2e9}</style></head><body>
 ''' + f'<style>{career_css}</style>\n' + ''.join(typography.parts) + f'\n<script>{career_js}</script>\n</body></html>\n')
-print('Готово: главная, ' + str(len(venues)) + ' страниц пространств, турагентам, карьера и tilda-t123.html')
+# The menu catalog reuses the existing PDF lightbox and shared navigation.
+catalog = json.loads((ROOT / 'src/menu-catalog.json').read_text())
+catalog_cards = []
+for item in catalog:
+    featured = ' pb__menu-card--featured' if item.get('featured') else ''
+    action_label = escape(item.get('action', 'Смотреть меню'))
+    item_title = escape(item['title'])
+    catalog_cards.append(f'''<a class="pb__menu-card{featured}" href="#pb-menu" data-pdf-source="{escape(item['source'])}" data-pdf-title="{item_title}" aria-haspopup="dialog" aria-controls="pb-menu" aria-label="{item_title} — открыть">
+        <h2>{item_title}</h2><span class="pb__menu-card-plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="pb__menu-card-action">{action_label}</span>
+      </a>''')
+catalog_overlays = venue_template[venue_template.index('  <dialog class="pb__pdf'):venue_template.index('  <div class="pb__toast"')]
+catalog_overlays = catalog_overlays.replace('  <!-- SHARED_BANQUET -->\n', '')
+catalog_source = (ROOT / 'src/menu.html').read_text()
+for placeholder, content in {
+    '<!-- SHARED_HEADER -->': internal_header.strip(),
+    '<!-- MENU_CARDS -->': '\n'.join(catalog_cards),
+    '<!-- SHARED_FORM -->': form.strip(),
+    '<!-- SHARED_CONTACTS -->': contacts.strip(),
+    '<!-- SHARED_ROUTE -->': route.strip(),
+    '<!-- SHARED_MENUS -->': catalog_overlays.strip(),
+    '<!-- SHARED_BANQUET -->': shared_banquet.strip(),
+}.items():
+    catalog_source = catalog_source.replace(placeholder, content)
+catalog_source = catalog_source.replace('<a href="menu.html">', '<a href="menu.html" aria-current="page">')
+typography = Typography()
+typography.feed(catalog_source)
+typography.close()
+catalog_css = css + '\n' + (ROOT / 'src/menu.css').read_text()
+(ROOT / 'dist/menu.html').write_text('''<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Меню — Певческая башня</title><meta name="description" content="Меню ресторана, индийское, китайское, детское меню и винная карта. Все меню действуют во всех залах Певческой башни."><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#065781"><link rel="icon" href="assets/logo.png"><link rel="preload" href="assets/fonts/bebas-neue-cyrillic.ttf" as="font" type="font/ttf" crossorigin><style>body{margin:0;background:#f7f2e9}</style></head><body>
+''' + f'<style>{catalog_css}</style>\n' + ''.join(typography.parts) + f'\n<script>{venue_js}</script>\n</body></html>\n')
+print('Готово: главная, ' + str(len(venues)) + ' страниц пространств, турагентам, карьера, меню и tilda-t123.html')
 
 # Responsive assets are prepared once by src/prepare_images.py and checked in.
 # Production builds need only the Python standard library.

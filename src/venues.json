@@ -28,9 +28,9 @@
     ],
     "menus": [
       {
-        "label": "Меню ресторана",
+        "label": "Меню",
         "source": "assets/menu.pdf",
-        "title": "Основное меню"
+        "title": "Меню ресторана"
       },
       {
         "label": "Винная карта",
@@ -70,9 +70,9 @@
     ],
     "menus": [
       {
-        "label": "Меню ресторана",
+        "label": "Меню",
         "source": "assets/menu.pdf",
-        "title": "Основное меню"
+        "title": "Меню ресторана"
       },
       {
         "label": "Винная карта",
@@ -223,9 +223,9 @@
     ],
     "menus": [
       {
-        "label": "Основное меню",
+        "label": "Меню",
         "source": "assets/menu.pdf",
-        "title": "Основное меню"
+        "title": "Меню ресторана"
       }
     ],
     "mainWidth": 920,
@@ -260,9 +260,9 @@
     ],
     "menus": [
       {
-        "label": "Основное меню",
+        "label": "Меню",
         "source": "assets/menu.pdf",
-        "title": "Основное меню"
+        "title": "Меню ресторана"
       }
     ],
     "mainWidth": 1280,

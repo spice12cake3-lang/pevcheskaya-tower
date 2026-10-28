@@ -445,14 +445,14 @@ html{scroll-behavior:smooth}
  .pb .pb__banquet-close{top:12px;right:12px}
 }
 
-.pb .pb__spaces,.pb .pb__agenda,.pb .pb__contacts{scroll-margin-top:112px}
+.pb .pb__spaces,.pb .pb__agenda,.pb .pb__events,.pb .pb__contacts{scroll-margin-top:112px}
 
 </style>
 <main class="pb" id="pb-site">
   <header class="pb__header" aria-label="Шапка сайта" hidden>
     <a class="pb__header-logo" href="./" aria-label="Певческая башня — главная"><img src="assets/optimized/logo-8da8cbd54114-550.webp" width="88" height="70" alt="Певческая башня" sizes="(max-width:639px) 100vw, 50vw" srcset="assets/optimized/logo-8da8cbd54114-320.webp 320w, assets/optimized/logo-8da8cbd54114-550.webp 550w" decoding="async"></a>
     <nav class="pb__header-nav" aria-label="Основная навигация">
-      <a href="#pb-spaces">Пространства</a><button type="button" data-pdf-source="assets/menu.pdf" data-pdf-title="Основное меню" aria-haspopup="dialog" aria-controls="pb-menu">Основное меню</button><a href="#pb-agenda">Афиша</a><a href="travel-agents.html">Турагентам</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a>
+      <a href="#pb-spaces">Пространства</a><a href="menu.html">Меню</a><a href="#pb-agenda">Афиша</a><a href="travel-agents.html">Турагентам</a><a href="#pb-events">Банкеты</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a>
     </nav>
     <div class="pb__header-socials pb__nav-socials"><a href="https://vk.ru/bashnya_pushkin" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"><img src="assets/nav-vk.svg" width="28" height="28" alt="" decoding="async"></a><button type="button" aria-label="MAX"><img src="assets/nav-max.svg" width="28" height="28" alt="" decoding="async"></button></div>
     <button class="pb__button pb__header-cta" type="button" data-banquet-open aria-haspopup="dialog" aria-controls="pb-banquet">Забронировать банкет</button>
@@ -506,7 +506,7 @@ html{scroll-behavior:smooth}
       <a class="pb__space-card" href="kids.html" aria-label="Детский ресторан"><div class="pb__space-top"><span class="pb__badges"><span>Европейская кухня</span><span>20 мест</span></span><span class="pb__space-plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="pb__space-media"><img class="pb__space-photo" src="assets/optimized/kids-card-d5dc759506fb-1821.jpg" width="1821" height="1707" alt="Игровая зона детского ресторана" loading="lazy" sizes="(max-width:639px) calc(100vw - 60px), (max-width:1199px) 46vw, 23vw" srcset="assets/optimized/kids-card-d5dc759506fb-320.webp 320w, assets/optimized/kids-card-d5dc759506fb-640.webp 640w, assets/optimized/kids-card-d5dc759506fb-1821.jpg 1821w" decoding="async"></div><div class="pb__card-copy"><h3 class="pb__card-title">Детский ресторан</h3><p class="pb__card-description">Для самых маленьких гурманов работает «Детский ресторан» с игровой комнатой и различными детскими программами.</p></div></a>
       <a class="pb__space-card" href="vodka.html" aria-label="Водка бар"><div class="pb__space-top"><span class="pb__badges"><span>Алкогольные напитки</span></span><span class="pb__space-plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="pb__space-media"><img class="pb__space-photo" src="assets/optimized/vodka-cad126ef45d0-920.webp" width="960" height="540" alt="Интерьер «Водка бара»" loading="lazy" sizes="(max-width:639px) calc(100vw - 60px), (max-width:1199px) 46vw, 23vw" srcset="assets/optimized/vodka-cad126ef45d0-320.webp 320w, assets/optimized/vodka-cad126ef45d0-640.webp 640w, assets/optimized/vodka-cad126ef45d0-920.webp 920w" decoding="async"></div><div class="pb__card-copy"><h3 class="pb__card-title">Водка бар</h3><p class="pb__card-description">Самый высокий бар в Царском Селе с коллекцией более 300 видов водки и выходом на обзорную площадку.</p></div></a>
       <a class="pb__space-card" href="karaoke.html" aria-label="Караоке бар"><div class="pb__space-top"><span class="pb__badges"><span>Закуски</span><span>30 мест</span></span><span class="pb__space-plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="pb__space-media"><img class="pb__space-photo" src="assets/optimized/karaoke-990dfa955fd6-1280.jpg" width="1280" height="853" alt="Интерьер караоке-бара" loading="lazy" sizes="(max-width:639px) calc(100vw - 60px), (max-width:1199px) 46vw, 23vw" srcset="assets/optimized/karaoke-990dfa955fd6-320.webp 320w, assets/optimized/karaoke-990dfa955fd6-1280.jpg 1280w" decoding="async"></div><div class="pb__card-copy"><h3 class="pb__card-title">Караоке бар</h3><p class="pb__card-description">Камерное пространство для компаний, дней рождения, корпоративов и вечеров с караоке.</p></div></a>
-      <article class="pb__space-card pb__space-card--menu"><div class="pb__card-copy"><h3 class="pb__card-title">Основное меню</h3><p class="pb__card-description">Действует во всех залах Певческой башни. У каждого зала также есть своё дополнительное меню — его можно посмотреть на странице зала.</p></div><a class="pb__button pb__button--light" href="#pb-menu" data-pdf-source="assets/menu.pdf">Смотреть меню</a></article>
+      <article class="pb__space-card pb__space-card--menu"><div class="pb__card-copy"><h3 class="pb__card-title">Меню</h3><p class="pb__card-description">Все меню и винная карта действуют во всех залах Певческой башни. Выберите нужное на странице меню.</p></div><a class="pb__button pb__button--light" href="menu.html">Смотреть меню</a></article>
     </div>
     <div class="pb__space-grid" id="pb-panel-apartments" role="tabpanel" aria-labelledby="pb-tab-apartments" hidden>
       <a class="pb__space-card" href="apartments.html" aria-label="Апартаменты"><div class="pb__space-top"><div class="pb__badges"><span>Проживание</span><span>Центр Пушкина</span></div><span class="pb__space-plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="pb__space-media"><img class="pb__space-photo" src="assets/optimized/apartments-69f82d0554d0-960.webp" width="2560" height="1707" alt="Интерьер апартаментов Певческой башни" loading="lazy" sizes="(max-width:639px) calc(100vw - 60px), (max-width:1199px) 46vw, 23vw" srcset="assets/optimized/apartments-69f82d0554d0-320.webp 320w, assets/optimized/apartments-69f82d0554d0-640.webp 640w, assets/optimized/apartments-69f82d0554d0-960.webp 960w, assets/optimized/apartments-69f82d0554d0-2560.jpg 2560w" decoding="async"></div><div class="pb__card-copy"><h3 class="pb__card-title">Апартаменты</h3><p class="pb__card-description">Светлые апартаменты в исторической башне с высокими потолками, антикварной мебелью и атмосферой для особенных выходных.</p></div></a>
@@ -663,14 +663,14 @@ html{scroll-behavior:smooth}
 
   <dialog class="pb__pdf pb__pdf--lightbox" id="pb-menu" aria-labelledby="pb-menu-title">
     <header class="pb__pdf-header">
-      <h2 class="pb__sr-only" id="pb-menu-title">Основное меню</h2>
+      <h2 class="pb__sr-only" id="pb-menu-title">Меню</h2>
       <div class="pb__pdf-controls" aria-label="Страницы меню">
         <button type="button" data-pdf-prev aria-label="Предыдущая страница" disabled>←</button><span class="pb__pdf-page-number" aria-live="polite">— / —</span><button type="button" data-pdf-next aria-label="Следующая страница" disabled>→</button>
         <button type="button" data-pdf-out hidden disabled>−</button><span class="pb__pdf-zoom" hidden></span><button type="button" data-pdf-in hidden disabled>+</button><button type="button" data-pdf-fit hidden disabled>По ширине</button>
       </div>
       <button class="pb__pdf-close" type="button" aria-label="Закрыть меню">Закрыть <span aria-hidden="true">×</span></button>
     </header>
-    <div class="pb__pdf-viewport" tabindex="0" aria-label="Основное меню. Используйте стрелки для перелистывания">
+    <div class="pb__pdf-viewport" tabindex="0" aria-label="Меню. Используйте стрелки для перелистывания">
       <div class="pb__pdf-status" role="status"><span data-pdf-message>Открываем меню…</span><button class="pb__button" type="button" data-pdf-retry hidden>Попробовать снова</button></div>
       <div class="pb__pdf-page"><canvas class="pb__pdf-canvas" role="img" aria-label="Страница меню" hidden></canvas></div>
     </div>
@@ -682,7 +682,7 @@ html{scroll-behavior:smooth}
   <dialog class="pb__navigation" id="pb-navigation" aria-label="Меню сайта">
     <div class="pb__navigation-panel">
     <div class="pb__navigation-header"><img src="assets/logo-white.png" width="88" height="70" alt="Певческая башня" decoding="async"><button class="pb__menu-toggle" type="button" data-nav-close aria-label="Закрыть навигацию">Меню <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-    <nav class="pb__navigation-links" aria-label="Разделы сайта"><a href="#pb-spaces">Пространства</a><button type="button" data-pdf-source="assets/menu.pdf" data-pdf-title="Основное меню" aria-haspopup="dialog" aria-controls="pb-menu">Основное меню</button><a href="#pb-agenda">Афиша</a><a href="travel-agents.html">Турагентам</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a></nav>
+    <nav class="pb__navigation-links" aria-label="Разделы сайта"><a href="#pb-spaces">Пространства</a><a href="menu.html">Меню</a><a href="#pb-agenda">Афиша</a><a href="travel-agents.html">Турагентам</a><a href="#pb-events">Банкеты</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a></nav>
     <div class="pb__nav-socials"><a href="https://vk.ru/bashnya_pushkin" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"><img src="assets/nav-vk.svg" width="28" height="28" alt="" decoding="async"></a><button type="button" aria-label="MAX"><img src="assets/nav-max.svg" width="28" height="28" alt="" decoding="async"></button></div>
     </div>
   </dialog>

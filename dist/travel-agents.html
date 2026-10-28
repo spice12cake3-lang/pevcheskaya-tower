@@ -444,7 +444,7 @@ html{scroll-behavior:smooth}
  .pb .pb__banquet-close{top:12px;right:12px}
 }
 
-.pb .pb__spaces,.pb .pb__agenda,.pb .pb__contacts{scroll-margin-top:112px}
+.pb .pb__spaces,.pb .pb__agenda,.pb .pb__events,.pb .pb__contacts{scroll-margin-top:112px}
 
 /* Sochi: two equal panels with a colour photograph and monochrome gallery. */
 .pb.pb--restaurant{padding:var(--pb-opening-inset) var(--pb-opening-inset) 16px;min-height:100dvh}
@@ -499,7 +499,7 @@ html{scroll-behavior:smooth}
   <header class="pb__header" aria-label="Шапка сайта" hidden>
     <a class="pb__header-logo" href="./" aria-label="Певческая башня — главная"><img src="assets/optimized/logo-8da8cbd54114-550.webp" width="88" height="70" alt="Певческая башня" sizes="(max-width:639px) 100vw, 50vw" srcset="assets/optimized/logo-8da8cbd54114-320.webp 320w, assets/optimized/logo-8da8cbd54114-550.webp 550w" decoding="async"></a>
     <nav class="pb__header-nav" aria-label="Основная навигация">
-      <a href="./#pb-spaces">Пространства</a><button type="button" data-pdf-source="assets/menu.pdf" data-pdf-title="Основное меню" aria-haspopup="dialog" aria-controls="pb-menu">Основное меню</button><a href="./#pb-agenda">Афиша</a><a href="travel-agents.html" aria-current="page">Турагентам</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a>
+      <a href="./#pb-spaces">Пространства</a><a href="menu.html">Меню</a><a href="./#pb-agenda">Афиша</a><a href="travel-agents.html" aria-current="page">Турагентам</a><a href="./#pb-events">Банкеты</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a>
     </nav>
     <div class="pb__header-socials pb__nav-socials"><a href="https://vk.ru/bashnya_pushkin" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"><img src="assets/nav-vk.svg" width="28" height="28" alt="" decoding="async"></a><button type="button" aria-label="MAX"><img src="assets/nav-max.svg" width="28" height="28" alt="" decoding="async"></button></div>
     <button class="pb__button pb__header-cta" type="button" data-banquet-open aria-haspopup="dialog" aria-controls="pb-banquet">Забронировать банкет</button>
@@ -564,7 +564,7 @@ html{scroll-behavior:smooth}
   <dialog class="pb__navigation" id="pb-navigation" aria-label="Меню сайта">
     <div class="pb__navigation-panel">
     <div class="pb__navigation-header"><img src="assets/logo-white.png" width="88" height="70" alt="Певческая башня" decoding="async"><button class="pb__menu-toggle" type="button" data-nav-close aria-label="Закрыть навигацию">Меню <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-    <nav class="pb__navigation-links" aria-label="Разделы сайта"><a href="./#pb-spaces">Пространства</a><button type="button" data-pdf-source="assets/menu.pdf" data-pdf-title="Основное меню" aria-haspopup="dialog" aria-controls="pb-menu">Основное меню</button><a href="./#pb-agenda">Афиша</a><a href="travel-agents.html" aria-current="page">Турагентам</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a></nav>
+    <nav class="pb__navigation-links" aria-label="Разделы сайта"><a href="./#pb-spaces">Пространства</a><a href="menu.html">Меню</a><a href="./#pb-agenda">Афиша</a><a href="travel-agents.html" aria-current="page">Турагентам</a><a href="./#pb-events">Банкеты</a><a href="vacancies.html">Карьера</a><a href="https://delivery.gutsait.ru/" target="_blank" rel="noopener noreferrer">Доставка</a><a href="#pb-contacts">Контакты</a></nav>
     <div class="pb__nav-socials"><a href="https://vk.ru/bashnya_pushkin" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"><img src="assets/nav-vk.svg" width="28" height="28" alt="" decoding="async"></a><button type="button" aria-label="MAX" data-social><img src="assets/nav-max.svg" width="28" height="28" alt="" decoding="async"></button></div>
     </div>
   </dialog>
@@ -595,7 +595,7 @@ html{scroll-behavior:smooth}
   var opener;
   var previousOverflow;
   function placeNavigation() {
-    var bounds = root.querySelector('.pb__restaurant-intro, .pb__careers-header').getBoundingClientRect();
+    var bounds = root.querySelector('.pb__restaurant-intro, .pb__careers-header, .pb__menu-page-header').getBoundingClientRect();
     var mobile = window.matchMedia('(max-width:639px)').matches;
     var fromHeader = opener && opener.closest('.pb__header');
     var top = mobile ? 12 : fromHeader ? 0 : Math.max(0, bounds.top);
@@ -627,10 +627,10 @@ html{scroll-behavior:smooth}
     link.addEventListener('click', function () { navigation.close(); });
   });
   var floatingHeader = root.querySelector('.pb__header');
-  var firstSection = root.querySelector('.pb__restaurant, .pb__careers');
+  var firstSection = root.querySelector('.pb__restaurant, .pb__careers, .pb__menus');
   var initialMenu = root.querySelector('.pb__intro-header [data-nav-open]');
   function updateFloatingHeader() {
-    var visibleFromStart = root.classList.contains('pb--careers') && window.matchMedia('(min-width:1200px)').matches;
+    var visibleFromStart = (root.classList.contains('pb--careers') || root.classList.contains('pb--menus')) && window.matchMedia('(min-width:1200px)').matches;
     var trigger = window.matchMedia('(max-width:639.98px)').matches && initialMenu ? initialMenu : firstSection;
     floatingHeader.hidden = !visibleFromStart && trigger.getBoundingClientRect().bottom > 0;
   }

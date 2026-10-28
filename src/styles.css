@@ -419,4 +419,4 @@ html{scroll-behavior:smooth}
  .pb .pb__banquet-close{top:12px;right:12px}
 }
 
-.pb .pb__spaces,.pb .pb__agenda,.pb .pb__contacts{scroll-margin-top:112px}
+.pb .pb__spaces,.pb .pb__agenda,.pb .pb__events,.pb .pb__contacts{scroll-margin-top:112px}
