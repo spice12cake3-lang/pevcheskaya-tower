@@ -61,9 +61,10 @@ def schedule_rows(events):
             times += f'–<time datetime="{day.isoformat()}T{end}">{end}</time>'
         age = f'<span class="pb__schedule-age">{escape(event["age"])}</span>' if 'age' in event else ''
         price = f'<span class="pb__schedule-price">{event["price"]} ₽</span>' if 'price' in event else ''
+        description = f'<p class="pb__schedule-description">{escape(event["description"])}</p>' if event.get('description') else ''
         rows.append(f'''<li class="pb__schedule-row">
         <time class="pb__schedule-date" datetime="{day.isoformat()}"><span class="pb__schedule-day">{day.day:02d}</span><span class="pb__schedule-weekday">{weekdays[day.weekday()]}</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time">{times}</span><h3 class="pb__schedule-title">{escape(event['title'])}{age}</h3></div>{price}
+        <div class="pb__schedule-copy"><span class="pb__schedule-time">{times}</span><h3 class="pb__schedule-title">{escape(event['title'])}{age}</h3>{description}</div>{price}
       </li>''')
     return '\n'.join(rows)
 

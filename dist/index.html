@@ -372,6 +372,7 @@ html{scroll-behavior:smooth}
 .pb .pb__schedule-copy{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
 .pb .pb__schedule-time{font:500 16px/1.4 var(--t-text-font);white-space:nowrap}
 .pb .pb__schedule-title{font:400 26px/1.15 var(--t-headline-font);overflow-wrap:anywhere}
+.pb .pb__schedule-description{font:400 15px/1.4 var(--t-text-font);color:var(--pb-ink);margin-top:4px}
 .pb .pb__schedule-price{justify-self:end;min-width:76px;padding:9px 14px;border-radius:8px;background:var(--pb-gold);color:var(--pb-white);font:500 16px/1.3 var(--t-text-font);text-align:center;white-space:nowrap}
 .pb .pb__schedule-age{display:inline-block;margin-left:6px;color:var(--pb-ink);font:400 13px/1 var(--t-text-font);vertical-align:middle}
 .pb .pb__agenda-note{margin-top:20px;font-size:14px;color:#6b6b6b}
@@ -385,6 +386,7 @@ html{scroll-behavior:smooth}
  .pb .pb__schedule-weekday{font-size:11px}
  .pb .pb__schedule-copy{gap:6px}
  .pb .pb__schedule-title{font-size:24px}
+ .pb .pb__schedule-description{font-size:14px}
  .pb .pb__schedule-time{font-size:14px}
  .pb .pb__schedule-price{grid-column:2;justify-self:start;padding:7px 12px;font-size:14px;min-width:0}
  .pb .pb__agenda-note{font-size:13px}
@@ -533,104 +535,100 @@ html{scroll-behavior:smooth}
   </section>
 
   <section class="pb__agenda pb__content" id="pb-agenda" aria-labelledby="pb-agenda-title">
-    <h2 id="pb-agenda-title">Афиша на октябрь</h2>
+    <h2 id="pb-agenda-title">Афиша на ноябрь</h2>
     <div class="pb__tabs" role="tablist" aria-label="Категории афиши"><button class="pb__tab" id="pb-tab-workshops" role="tab" aria-selected="true" aria-controls="pb-panel-workshops">Детские мастер-классы</button><button class="pb__tab" id="pb-tab-music" role="tab" aria-selected="false" aria-controls="pb-panel-music" tabindex="-1">Живая музыка</button></div>
     <div id="pb-panel-workshops" role="tabpanel" aria-labelledby="pb-tab-workshops">
       <ol class="pb__schedule"><li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-03"><span class="pb__schedule-day">03</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-03T19:00">19:00</time></span><h3 class="pb__schedule-title">Картина с объёмными лимонами</h3></div><span class="pb__schedule-price">900 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-01"><span class="pb__schedule-day">01</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-01T18:00">18:00</time></span><h3 class="pb__schedule-title">Роспись подставки для телефона</h3><p class="pb__schedule-description">Освоите приёмы росписи акриловыми красками, подберёте цветовую палитру и закрепите рисунок — получите стильную подставку с индивидуальным дизайном.</p></div><span class="pb__schedule-price">500 ₽</span>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-04"><span class="pb__schedule-day">04</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-04T18:00">18:00</time></span><h3 class="pb__schedule-title">Браслетик из бусин</h3></div><span class="pb__schedule-price">350 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-04"><span class="pb__schedule-day">04</span><span class="pb__schedule-weekday">Ср</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-04T18:00">18:00</time></span><h3 class="pb__schedule-title">Роспись подсвечника «Лотос»</h3><p class="pb__schedule-description">Проработаете плавные линии лепестков, подберёте гармоничные оттенки и нанесёте финишное покрытие — создадите декоративный подсвечник для уютного освещения.</p></div><span class="pb__schedule-price">500 ₽</span>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-10"><span class="pb__schedule-day">10</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-10T19:00">19:00</time></span><h3 class="pb__schedule-title">Роспись подсвечника «Лотос»</h3></div><span class="pb__schedule-price">500 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-07"><span class="pb__schedule-day">07</span><span class="pb__schedule-weekday">Сб</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-07T19:00">19:00</time></span><h3 class="pb__schedule-title">Роспись шопера</h3><p class="pb__schedule-description">Перенесёте авторский эскиз на ткань, поработаете с контурами и закрепите роспись — получите функциональный аксессуар с уникальным рисунком.</p></div><span class="pb__schedule-price">800 ₽</span>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-11"><span class="pb__schedule-day">11</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-11T18:00">18:00</time></span><h3 class="pb__schedule-title">Роспись шопера</h3></div><span class="pb__schedule-price">800 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-08"><span class="pb__schedule-day">08</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-08T18:00">18:00</time></span><h3 class="pb__schedule-title">Брелок из бусин на телефон</h3><p class="pb__schedule-description">Подберёте бусины по цвету и фактуре, отработаете технику нанизывания, соберёте стильный и лёгкий брелок для телефона.</p></div><span class="pb__schedule-price">500 ₽</span>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-17"><span class="pb__schedule-day">17</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-17T19:00">19:00</time></span><h3 class="pb__schedule-title">Картина из воздушного пластилина</h3></div><span class="pb__schedule-price">600 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-14"><span class="pb__schedule-day">14</span><span class="pb__schedule-weekday">Сб</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-14T19:00">19:00</time></span><h3 class="pb__schedule-title">Картина с объёмными лимонами</h3><p class="pb__schedule-description">Создадите яркую интерьерную картину с лимонами.</p></div><span class="pb__schedule-price">900 ₽</span>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-18"><span class="pb__schedule-day">18</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-18T18:00">18:00</time></span><h3 class="pb__schedule-title">Роспись цветка на подставке</h3></div><span class="pb__schedule-price">350 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-15"><span class="pb__schedule-day">15</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-15T18:00">18:00</time></span><h3 class="pb__schedule-title">Картина из воздушного пластилина</h3><p class="pb__schedule-description">Сформируете слои из лёгкого пластилина, добавите фактурные детали и подберёте цветовую гамму — получите композицию для украшения интерьера.</p></div><span class="pb__schedule-price">800 ₽</span>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-24"><span class="pb__schedule-day">24</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-24T19:00">19:00</time></span><h3 class="pb__schedule-title">Диско-фигура<span class="pb__schedule-age">6+</span></h3></div><span class="pb__schedule-price">600 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-28"><span class="pb__schedule-day">28</span><span class="pb__schedule-weekday">Сб</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-28T19:00">19:00</time></span><h3 class="pb__schedule-title">Роспись новогодних гипсовых игрушек</h3><p class="pb__schedule-description">Подготовите поверхность гипсовой заготовки, проработаете мелкие детали и закрепите результат лаком — создадите стилизованные игрушки для новогодней ёлки.</p></div><span class="pb__schedule-price">400 ₽</span>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-25"><span class="pb__schedule-day">25</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-25T18:00">18:00</time></span><h3 class="pb__schedule-title">Роспись гипсовых фигурок</h3></div><span class="pb__schedule-price">350 ₽</span>
-      </li>
-<li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-31"><span class="pb__schedule-day">31</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-31T19:00">19:00</time></span><h3 class="pb__schedule-title">Роспись шкатулки «Карусель»</h3></div><span class="pb__schedule-price">800 ₽</span>
+        <time class="pb__schedule-date" datetime="2026-11-29"><span class="pb__schedule-day">29</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-29T18:00">18:00</time></span><h3 class="pb__schedule-title">Свечи из вощины</h3><p class="pb__schedule-description">Научитесь формировать свечу из листов вощины, подбирать фитиль и скручивать основу — получите экологичную свечу с натуральным ароматом и украсите её.</p></div><span class="pb__schedule-price">450 ₽</span>
       </li></ol>
-      <div class="pb__agenda-info"><p>Мастер-классы длятся около 30 минут.</p><p>Обязательна запись по телефону / MAX: <a href="tel:+79218934556">+7 (921) 893-45-56</a></p></div>
+      <div class="pb__agenda-info"><p>Примерная продолжительность мастер-классов — 30–60 минут.</p><p>Обязательна предварительная запись по телефону: <a href="tel:+79218934556">+7 (921) 893-45-56</a></p></div>
       <p class="pb__agenda-note">В расписании возможны изменения.</p>
     </div>
     <div id="pb-panel-music" role="tabpanel" aria-labelledby="pb-tab-music" hidden>
       <ol class="pb__schedule"><li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-02"><span class="pb__schedule-day">02</span><span class="pb__schedule-weekday">Пт</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-02T20:00">20:00</time>–<time datetime="2026-10-02T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Дежавю</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-03"><span class="pb__schedule-day">03</span><span class="pb__schedule-weekday">Вт</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-03T20:00">20:00</time>–<time datetime="2026-11-03T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Danceandjoy</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-03"><span class="pb__schedule-day">03</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-03T20:00">20:00</time>–<time datetime="2026-10-03T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Атмосфера</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-04"><span class="pb__schedule-day">04</span><span class="pb__schedule-weekday">Ср</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-04T16:00">16:00</time>–<time datetime="2026-11-04T19:00">19:00</time></span><h3 class="pb__schedule-title">Дуэт Encor</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-04"><span class="pb__schedule-day">04</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-04T16:00">16:00</time>–<time datetime="2026-10-04T19:00">19:00</time></span><h3 class="pb__schedule-title">Дуэт Encor</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-06"><span class="pb__schedule-day">06</span><span class="pb__schedule-weekday">Пт</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-06T20:00">20:00</time>–<time datetime="2026-11-06T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Дежавю</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-09"><span class="pb__schedule-day">09</span><span class="pb__schedule-weekday">Пт</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-09T20:00">20:00</time>–<time datetime="2026-10-09T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Danceandjoy</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-07"><span class="pb__schedule-day">07</span><span class="pb__schedule-weekday">Сб</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-07T20:00">20:00</time>–<time datetime="2026-11-07T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Дежавю</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-10"><span class="pb__schedule-day">10</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-10T20:00">20:00</time>–<time datetime="2026-10-10T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Danceandjoy</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-08"><span class="pb__schedule-day">08</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-08T16:00">16:00</time>–<time datetime="2026-11-08T19:00">19:00</time></span><h3 class="pb__schedule-title">Человек-оркестр Piterboom</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-11"><span class="pb__schedule-day">11</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-11T16:00">16:00</time>–<time datetime="2026-10-11T19:00">19:00</time></span><h3 class="pb__schedule-title">Человек-оркестр Piterboom</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-13"><span class="pb__schedule-day">13</span><span class="pb__schedule-weekday">Пт</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-13T20:00">20:00</time>–<time datetime="2026-11-13T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Danceandjoy</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-16"><span class="pb__schedule-day">16</span><span class="pb__schedule-weekday">Пт</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-16T20:00">20:00</time>–<time datetime="2026-10-16T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Атмосфера</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-14"><span class="pb__schedule-day">14</span><span class="pb__schedule-weekday">Сб</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-14T20:00">20:00</time>–<time datetime="2026-11-14T23:00">23:00</time></span><h3 class="pb__schedule-title">Группа Калейдоскоп-FM</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-17"><span class="pb__schedule-day">17</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-17T20:00">20:00</time>–<time datetime="2026-10-17T23:00">23:00</time></span><h3 class="pb__schedule-title">Группа Калейдоскоп-FM</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-15"><span class="pb__schedule-day">15</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-15T16:00">16:00</time>–<time datetime="2026-11-15T19:00">19:00</time></span><h3 class="pb__schedule-title">Дуэт Encor</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-18"><span class="pb__schedule-day">18</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-18T16:00">16:00</time>–<time datetime="2026-10-18T19:00">19:00</time></span><h3 class="pb__schedule-title">Дуэт Encor</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-20"><span class="pb__schedule-day">20</span><span class="pb__schedule-weekday">Пт</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-20T20:00">20:00</time>–<time datetime="2026-11-20T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Дежавю</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-23"><span class="pb__schedule-day">23</span><span class="pb__schedule-weekday">Пт</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-23T20:00">20:00</time>–<time datetime="2026-10-23T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Дежавю</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-21"><span class="pb__schedule-day">21</span><span class="pb__schedule-weekday">Сб</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-21T20:00">20:00</time>–<time datetime="2026-11-21T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Дежавю</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-24"><span class="pb__schedule-day">24</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-24T20:00">20:00</time>–<time datetime="2026-10-24T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Дежавю</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-22"><span class="pb__schedule-day">22</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-22T16:00">16:00</time>–<time datetime="2026-11-22T19:00">19:00</time></span><h3 class="pb__schedule-title">Дуэт Encor</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-25"><span class="pb__schedule-day">25</span><span class="pb__schedule-weekday">Вс</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-25T16:00">16:00</time>–<time datetime="2026-10-25T19:00">19:00</time></span><h3 class="pb__schedule-title">Человек-оркестр Piterboom</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-27"><span class="pb__schedule-day">27</span><span class="pb__schedule-weekday">Пт</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-27T20:00">20:00</time>–<time datetime="2026-11-27T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Danceandjoy</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-30"><span class="pb__schedule-day">30</span><span class="pb__schedule-weekday">Пт</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-30T20:00">20:00</time>–<time datetime="2026-10-30T23:00">23:00</time></span><h3 class="pb__schedule-title">Группа Калейдоскоп-FM</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-28"><span class="pb__schedule-day">28</span><span class="pb__schedule-weekday">Сб</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-28T20:00">20:00</time>–<time datetime="2026-11-28T23:00">23:00</time></span><h3 class="pb__schedule-title">Группа Калейдоскоп-FM</h3></div>
       </li>
 <li class="pb__schedule-row">
-        <time class="pb__schedule-date" datetime="2026-10-31"><span class="pb__schedule-day">31</span><span class="pb__schedule-weekday">Сб</span></time>
-        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-10-31T20:00">20:00</time>–<time datetime="2026-10-31T23:00">23:00</time></span><h3 class="pb__schedule-title">Трио Danceandjoy</h3></div>
+        <time class="pb__schedule-date" datetime="2026-11-29"><span class="pb__schedule-day">29</span><span class="pb__schedule-weekday">Вс</span></time>
+        <div class="pb__schedule-copy"><span class="pb__schedule-time"><time datetime="2026-11-29T16:00">16:00</time>–<time datetime="2026-11-29T19:00">19:00</time></span><h3 class="pb__schedule-title">Человек-оркестр Piterboom</h3></div>
       </li></ol>
       <p class="pb__agenda-note">В расписании возможны изменения.</p>
     </div>
