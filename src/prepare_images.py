@@ -12,12 +12,13 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 LOSSLESS_SOURCES = {
+    'assets/sochi-cover.jpg', 'assets/shop-cover.jpg',
     'assets/apartments.jpg', 'assets/sochi.jpg', 'assets/odessa.jpg', 'assets/karaoke.jpg', 'assets/india.jpg', 'assets/shop.jpg', 'assets/kids-card.jpg',
     *(f'assets/venues/{venue}/{number}.jpg'
       for venue in ('apartments', 'sochi', 'odessa', 'karaoke', 'india', 'shop') for number in (1, 2, 3)),
 }
 sources = '\n'.join(p.read_text() for p in (ROOT / 'src').iterdir()
-                    if p.suffix in ('.html', '.json') and p.name != 'image-manifest.json')
+                    if p.suffix in ('.html', '.json') and p.name not in ('image-manifest.json', 'menu-previews.json'))
 paths = sorted(set(re.findall(r'assets/[\w/.-]+\.(?:png|jpe?g)', sources)))
 manifest = {}
 for source in paths:
@@ -33,9 +34,15 @@ for source in paths:
         if image.mode not in ('RGB', 'RGBA'):
             image = image.convert('RGBA' if 'transparency' in image.info else 'RGB')
         maximum = image.width if lossless else min(image.width, 1920)
-        widths = sorted(set(w for w in (320, 640, 960, 1280, maximum) if w <= maximum))
+        extra_widths = (1920, 2560) if lossless and maximum > 2560 else ()
+        widths = sorted(set(w for w in (320, 640, 960, 1280, *extra_widths, maximum) if w <= maximum))
         variants = []
         for width in widths:
+            # Large JPEG originals are already smaller than a full lossless WebP.
+            # Keep their exact bytes; screen-sized variants handle normal visits.
+            if lossless and width == maximum and maximum > 2560 and path.suffix.lower() in ('.jpg', '.jpeg'):
+                variants.append({'src': source, 'width': width, 'bytes': path.stat().st_size})
+                continue
             height = round(width * image.height / image.width)
             target = f'assets/optimized/{path.stem}-{digest}-{width}.webp'
             destination = ROOT / 'dist' / target

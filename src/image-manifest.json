@@ -335,63 +335,88 @@
       }
     ]
   },
-  "assets/shop.jpg": {
-    "width": 2560,
-    "height": 1707,
-    "originalBytes": 3973457,
+  "assets/shop-cover.jpg": {
+    "width": 5472,
+    "height": 3648,
+    "originalBytes": 11464368,
     "variants": [
       {
-        "src": "assets/optimized/shop-ffaf87ad1899-320.webp",
+        "src": "assets/optimized/shop-cover-87617a36e78f-320.webp",
         "width": 320,
-        "bytes": 124224
+        "bytes": 109388
       },
       {
-        "src": "assets/optimized/shop-ffaf87ad1899-640.webp",
+        "src": "assets/optimized/shop-cover-87617a36e78f-640.webp",
         "width": 640,
-        "bytes": 449484
+        "bytes": 386134
       },
       {
-        "src": "assets/optimized/shop-ffaf87ad1899-960.webp",
+        "src": "assets/optimized/shop-cover-87617a36e78f-960.webp",
         "width": 960,
-        "bytes": 927728
+        "bytes": 819630
       },
       {
-        "src": "assets/optimized/shop-ffaf87ad1899-1280.webp",
+        "src": "assets/optimized/shop-cover-87617a36e78f-1280.webp",
         "width": 1280,
-        "bytes": 1583242
+        "bytes": 1414002
       },
       {
-        "src": "assets/optimized/shop-ffaf87ad1899-2560.jpg",
+        "src": "assets/optimized/shop-cover-87617a36e78f-1920.webp",
+        "width": 1920,
+        "bytes": 2919086
+      },
+      {
+        "src": "assets/optimized/shop-cover-87617a36e78f-2560.webp",
         "width": 2560,
-        "bytes": 3973457
+        "bytes": 5021146
+      },
+      {
+        "src": "assets/shop-cover.jpg",
+        "width": 5472,
+        "bytes": 11464368
       }
     ],
     "compression": "lossless"
   },
-  "assets/sochi.jpg": {
-    "width": 2560,
-    "height": 1707,
-    "originalBytes": 892238,
+  "assets/sochi-cover.jpg": {
+    "width": 5472,
+    "height": 3648,
+    "originalBytes": 20558321,
     "variants": [
       {
-        "src": "assets/optimized/sochi-6c457969db43-320.webp",
+        "src": "assets/optimized/sochi-cover-09a56a44c487-320.webp",
         "width": 320,
-        "bytes": 88872
+        "bytes": 103730
       },
       {
-        "src": "assets/optimized/sochi-6c457969db43-640.webp",
+        "src": "assets/optimized/sochi-cover-09a56a44c487-640.webp",
         "width": 640,
-        "bytes": 320912
+        "bytes": 378614
       },
       {
-        "src": "assets/optimized/sochi-6c457969db43-960.webp",
+        "src": "assets/optimized/sochi-cover-09a56a44c487-960.webp",
         "width": 960,
-        "bytes": 672580
+        "bytes": 837256
       },
       {
-        "src": "assets/optimized/sochi-6c457969db43-2560.jpg",
+        "src": "assets/optimized/sochi-cover-09a56a44c487-1280.webp",
+        "width": 1280,
+        "bytes": 1526840
+      },
+      {
+        "src": "assets/optimized/sochi-cover-09a56a44c487-1920.webp",
+        "width": 1920,
+        "bytes": 3536524
+      },
+      {
+        "src": "assets/optimized/sochi-cover-09a56a44c487-2560.webp",
         "width": 2560,
-        "bytes": 892238
+        "bytes": 6461432
+      },
+      {
+        "src": "assets/sochi-cover.jpg",
+        "width": 5472,
+        "bytes": 20558321
       }
     ],
     "compression": "lossless"
