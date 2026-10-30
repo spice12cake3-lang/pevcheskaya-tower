@@ -5,6 +5,8 @@ from html import escape
 from datetime import date
 import json
 import re
+import hashlib
+import shutil
 
 SHORT_WORDS = re.compile(
     r'(?<![\w-])(?:в|во|на|к|ко|с|со|у|о|об|обо|от|ото|по|до|за|из|изо|'
@@ -40,6 +42,39 @@ class Typography(HTMLParser):
         self.parts.append(f'<!--{data}-->')
 
 ROOT = Path(__file__).resolve().parent
+
+
+def prepare_video_asset():
+    """Assemble the video from source chunks and verify it before publishing."""
+    manifest_path = ROOT / 'src/video-asset.json'
+    if not manifest_path.exists():
+        return
+    asset = json.loads(manifest_path.read_text())
+    output = ROOT / 'dist' / asset['output']
+    def checksum(path):
+        digest = hashlib.sha256()
+        with path.open('rb') as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+                digest.update(chunk)
+        return digest.hexdigest()
+    if output.exists() and output.stat().st_size == asset['bytes'] and checksum(output) == asset['sha256']:
+        return
+    output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = output.with_suffix('.tmp')
+    try:
+        with temporary.open('wb') as stream:
+            for part in asset['parts']:
+                with (ROOT / 'src' / part).open('rb') as source:
+                    shutil.copyfileobj(source, stream)
+        if temporary.stat().st_size != asset['bytes'] or checksum(temporary) != asset['sha256']:
+            raise ValueError('The assembled video failed its integrity check')
+        temporary.replace(output)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
+prepare_video_asset()
 shared_header = (ROOT / 'src/header.html').read_text()
 shared_banquet = (ROOT / 'src/banquet-dialog.html').read_text()
 page = (ROOT / 'src/page.html').read_text()

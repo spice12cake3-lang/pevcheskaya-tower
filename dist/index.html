@@ -102,7 +102,10 @@ html{scroll-behavior:smooth}
 .pb .pb__booking-field input::-webkit-date-and-time-value{text-align:left}
 .pb .pb__booking-field svg{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:18px;height:18px;fill:none;stroke:var(--pb-gold);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .pb .pb__booking-submit{justify-self:center}
-.pb .pb__spaces,.pb .pb__events,.pb .pb__agenda,.pb .pb__contact,.pb .pb__contacts{margin-top:72px}
+.pb .pb__spaces,.pb .pb__film,.pb .pb__events,.pb .pb__agenda,.pb .pb__contact,.pb .pb__contacts{margin-top:72px}
+.pb .pb__film{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#111;scroll-margin-top:112px}
+.pb .pb__film-player{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:899.98px),(hover:none),(pointer:coarse){.pb .pb__film{display:none}}
 .pb .pb__tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;margin-bottom:24px}
 .pb .pb__tab{display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-height:48px;padding:12px 20px;border-radius:10px;background:var(--pb-white);font:400 20px/1.2 var(--t-headline-font);text-align:center;transition:background .18s ease}
 .pb .pb__tab[aria-selected="true"]{background:var(--pb-gold);color:var(--pb-white)}
@@ -208,7 +211,7 @@ html{scroll-behavior:smooth}
  .pb{font-size:16px}
  .pb .pb__contact-copy{align-self:stretch}
  .pb .pb__contact .pb__contact-direct{margin-top:auto;padding-top:40px}
- .pb .pb__spaces,.pb .pb__events,.pb .pb__agenda,.pb .pb__contact,.pb .pb__contacts{margin-top:120px}
+ .pb .pb__spaces,.pb .pb__film,.pb .pb__events,.pb .pb__agenda,.pb .pb__contact,.pb .pb__contacts{margin-top:120px}
  .pb h2,.pb .pb__booking h2{font-size:42px;line-height:1.1}
  .pb .pb__contact h2{font-size:64px;line-height:1.05}
  .pb .pb__card-title{font-size:30px}
@@ -285,7 +288,7 @@ html{scroll-behavior:smooth}
  .pb .pb__booking-field svg{width:16px;height:16px;right:16px}
  .pb .pb__booking-field--guests,.pb .pb__booking-submit{grid-column:1/-1}
  .pb .pb__booking-submit{width:100%;height:60px;min-height:60px;justify-self:stretch}
- .pb .pb__spaces,.pb .pb__events,.pb .pb__agenda,.pb .pb__contact,.pb .pb__contacts{margin-top:52px}
+ .pb .pb__spaces,.pb .pb__film,.pb .pb__events,.pb .pb__agenda,.pb .pb__contact,.pb .pb__contacts{margin-top:52px}
  .pb .pb__tabs{margin-top:20px;margin-bottom:24px}
  .pb .pb__tab{min-height:52px;font-size:20px;padding:13px 20px}
  .pb .pb__events{gap:12px}
@@ -519,6 +522,12 @@ html{scroll-behavior:smooth}
     <div class="pb__space-grid" id="pb-panel-shops" role="tabpanel" aria-labelledby="pb-tab-shops" hidden>
       <a class="pb__space-card" href="shop.html" aria-label="Сувенирная лавка"><div class="pb__space-top"><div class="pb__badges"><span>Сувениры</span><span>Подарки</span></div><span class="pb__space-plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="pb__space-media"><img class="pb__space-photo" src="assets/optimized/shop-cover-87617a36e78f-960.webp" width="5472" height="3648" alt="Интерьер магазина подарков и сувениров в Певческой башне" loading="lazy" sizes="(max-width:639px) calc(100vw - 60px), (max-width:1199px) 46vw, 23vw" srcset="assets/optimized/shop-cover-87617a36e78f-320.webp 320w, assets/optimized/shop-cover-87617a36e78f-640.webp 640w, assets/optimized/shop-cover-87617a36e78f-960.webp 960w, assets/optimized/shop-cover-87617a36e78f-1280.webp 1280w, assets/optimized/shop-cover-87617a36e78f-1920.webp 1920w, assets/optimized/shop-cover-87617a36e78f-2560.webp 2560w, assets/shop-cover.jpg 5472w" decoding="async"></div><div class="pb__card-copy"><h3 class="pb__card-title">Сувенирная лавка</h3><p class="pb__card-description">Магазин подарков и сувениров с авторскими украшениями, предметами декора и вещами, которые хочется увезти с собой из Пушкина.</p></div></a>
     </div>
+  </section>
+
+  <section class="pb__film pb__content" id="pb-video" aria-label="Видео о Певческой башне" hidden>
+    <video class="pb__film-player" width="1920" height="1080" controls autoplay muted loop playsinline preload="none" data-video-source="assets/video/tower-tour-silent-20261030.mp4" data-video-poster="assets/video/tower-poster-20261030.webp" aria-label="Видео о Певческой башне без звука">
+      Ваш браузер не поддерживает видео. <a href="assets/video/tower-tour-silent-20261030.mp4">Открыть видео</a>.
+    </video>
   </section>
 
   <section class="pb__events pb__inset" id="pb-events" aria-labelledby="pb-events-title">
@@ -816,6 +825,47 @@ html{scroll-behavior:smooth}
     toast.hidden = false;
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () { toast.hidden = true; }, 5000);
+  }
+
+  var film = root.querySelector('.pb__film-player');
+  if (film) {
+    var filmSection = film.closest('.pb__film');
+    var desktopFilm = window.matchMedia('(min-width: 900px) and (hover: hover) and (pointer: fine)');
+    var reducedFilmMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var filmObserver;
+    var filmVisible = false;
+    film.muted = true;
+    film.autoplay = !reducedFilmMotion.matches;
+    function playVisibleFilm() {
+      if (!desktopFilm.matches || !filmVisible || document.hidden) return;
+      if (!film.getAttribute('src')) film.src = film.dataset.videoSource;
+      if (!reducedFilmMotion.matches) film.play().catch(function () { /* Native controls remain available. */ });
+    }
+    function updateFilmViewport() {
+      if (filmObserver) filmObserver.disconnect();
+      filmVisible = false;
+      filmSection.hidden = !desktopFilm.matches;
+      if (!desktopFilm.matches) {
+        film.pause();
+        film.removeAttribute('src');
+        film.removeAttribute('poster');
+        film.load();
+        return;
+      }
+      film.poster = film.dataset.videoPoster;
+      filmObserver = new IntersectionObserver(function (entries) {
+        filmVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.15;
+        if (filmVisible) playVisibleFilm();
+        else film.pause();
+      }, {threshold: 0.15});
+      filmObserver.observe(filmSection);
+    }
+    desktopFilm.addEventListener('change', updateFilmViewport);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) film.pause();
+      else playVisibleFilm();
+    });
+    updateFilmViewport();
   }
 
   var arrival = root.querySelector('#pb-arrival');

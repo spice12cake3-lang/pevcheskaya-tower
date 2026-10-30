@@ -1,0 +1,15 @@
+{
+  "output": "assets/video/tower-tour-silent-20261030.mp4",
+  "sha256": "3dfc3e21450e43712d189bb2948bd4270c8bafd0c23d76afbd6a8a6086acc19b",
+  "bytes": 82737219,
+  "parts": [
+    "video-parts/tower-tour-20261030-01.bin",
+    "video-parts/tower-tour-20261030-02.bin",
+    "video-parts/tower-tour-20261030-03.bin",
+    "video-parts/tower-tour-20261030-04.bin",
+    "video-parts/tower-tour-20261030-05.bin",
+    "video-parts/tower-tour-20261030-06.bin",
+    "video-parts/tower-tour-20261030-07.bin",
+    "video-parts/tower-tour-20261030-08.bin"
+  ]
+}

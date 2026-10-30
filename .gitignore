@@ -6,5 +6,6 @@ __pycache__/
 preview-*.png
 qa-*/
 dist/qa-*
+dist/assets/video/*.mp4
 reference/
 design-qa.md
