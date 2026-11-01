@@ -1,28 +1,23 @@
 {
-  "assets/apartments.jpg": {
-    "width": 2560,
-    "height": 1707,
-    "originalBytes": 773499,
+  "assets/apartments-cover.jpg": {
+    "width": 800,
+    "height": 533,
+    "originalBytes": 376818,
     "variants": [
       {
-        "src": "assets/optimized/apartments-69f82d0554d0-320.webp",
+        "src": "assets/optimized/apartments-cover-a4a0159f7458-320.webp",
         "width": 320,
-        "bytes": 84242
+        "bytes": 111632
       },
       {
-        "src": "assets/optimized/apartments-69f82d0554d0-640.webp",
+        "src": "assets/optimized/apartments-cover-a4a0159f7458-640.webp",
         "width": 640,
-        "bytes": 301010
+        "bytes": 372552
       },
       {
-        "src": "assets/optimized/apartments-69f82d0554d0-960.webp",
-        "width": 960,
-        "bytes": 623424
-      },
-      {
-        "src": "assets/optimized/apartments-69f82d0554d0-2560.jpg",
-        "width": 2560,
-        "bytes": 773499
+        "src": "assets/optimized/apartments-cover-a4a0159f7458-800.jpg",
+        "width": 800,
+        "bytes": 376818
       }
     ],
     "compression": "lossless"

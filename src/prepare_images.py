@@ -12,7 +12,7 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 LOSSLESS_SOURCES = {
-    'assets/sochi-cover.jpg', 'assets/shop-cover.jpg',
+    'assets/sochi-cover.jpg', 'assets/shop-cover.jpg', 'assets/apartments-cover.jpg',
     'assets/apartments.jpg', 'assets/sochi.jpg', 'assets/odessa.jpg', 'assets/karaoke.jpg', 'assets/india.jpg', 'assets/shop.jpg', 'assets/kids-card.jpg',
     *(f'assets/venues/{venue}/{number}.jpg'
       for venue in ('apartments', 'sochi', 'odessa', 'karaoke', 'india', 'shop') for number in (1, 2, 3)),
